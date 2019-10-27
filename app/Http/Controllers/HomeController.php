@@ -83,7 +83,7 @@ class HomeController extends Controller
     {
         $pageTitle  = "questions";
         if(  request()->segment(1) == "en" ){
-            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null);
+            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(8);
         }
         return view('front-end.en.questions' , compact('pageTitle' , 'questions') );
     }

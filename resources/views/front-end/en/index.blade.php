@@ -322,24 +322,29 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
+						@if(isset($briefs->video))
 					<video width="400" controls class="vid">
-					  <source src="test.mp4" type="video/mp4">
-					  <source src="test.ogg" type="video/ogg">
+					  <source src="{{$briefs->video}}" type="video/mp4">
+					  {{-- <source src="test.ogg" type="video/ogg"> --}}
 					  Your browser does not support HTML5 video.
 					</video>
+					@endif
 				</div>
 				<div class="col-sm-6">
+						@if(isset($briefs->video2))
 					<video width="400" controls class="vid">
-					  <source src="test.mp4" type="video/mp4">
-					  <source src="test.ogg" type="video/ogg">
+					  <source src="{{$briefs->video2}}" type="video/mp4">
+					  {{-- <source src="test.ogg" type="video/ogg"> --}}
 					  Your browser does not support HTML5 video.
 					</video>
+					@endif
 				</div>
 			</div>
-			
-			<div class="more-videos text-center">
-			<a href="#" class="vmore">More videos</a>
-			</div>
+			@if(isset($briefs->youtube))
+				<div class="more-videos text-center">
+					<a href="{{$briefs->youtube}}" class="vmore">More videos</a>
+				</div>
+			@endif
 		</div>
 		
 		
