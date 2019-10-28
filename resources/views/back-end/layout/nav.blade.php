@@ -3,7 +3,7 @@
       <!--Logo text start-->
       <div class="header-logo">
           <a href="index.html" title="">
-              <h1>baseProject</h1>
+              <h1>Ahmed - Reda</h1>
           </a>
       </div>
       <!--Logo text End-->

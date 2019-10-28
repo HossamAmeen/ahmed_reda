@@ -8,7 +8,7 @@ class Operation extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-       'name' ,'image', "user_id"
+       'title' ,'en_title','image', "user_id"
     ];
     public function user(){
         return $this->belongsTo(User::class);

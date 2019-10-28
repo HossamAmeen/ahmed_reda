@@ -34,8 +34,8 @@ $factory->define(App\Models\Brief::class, function (Faker $faker) {
         'facebook' => "https://www.facebook.com/UROClinicDrAhmedReda/",
         'twitter' => "https://twitter.com/",
         'instagram' => "https://www.instagram.com/", // 
-        'video' =>"https://www.youtube.com/watch?v=AnBHcM-tZsM" ,
-        'video2' =>"https://www.youtube.com/watch?v=AnBHcM-tZsM" ,
+        'video' =>"https://www.youtube.com/embed/AnBHcM-tZsM" ,
+        'video2' =>"https://www.youtube.com/embed/AnBHcM-tZsM" ,
         'youtube' =>"https://www.youtube.com" ,
         'user_id' =>1 ,
         

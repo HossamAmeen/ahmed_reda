@@ -8,7 +8,7 @@ class Drug extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-       'name' , "user_id"
+       'title' ,'en_title', "user_id"
     ];
     public function user(){
         return $this->belongsTo(User::class);

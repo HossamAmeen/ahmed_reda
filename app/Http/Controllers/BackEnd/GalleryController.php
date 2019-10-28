@@ -11,7 +11,7 @@ class GalleryController extends BackEndController
     {
         parent::__construct($model);
     }
-    public function store(Request $request){
+    public function store(GalleryRequest $request){
             $requestArray = $request->all();
             
            

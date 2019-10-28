@@ -75,6 +75,18 @@
         </a>
     
     </li>
+    <li class="{{is_active('drugs')}}">
+        <a href="{{route('drugs.index')}}"  class="{{is_active('drugs')}}">
+                <i class="fas fa-capsules"></i><span>الأدويه</span>
+        </a>
+    
+    </li>
+    <li class="{{is_active('operations')}}">
+        <a href="{{route('operations.index')}}"  class="{{is_active('operations')}}">
+                <i class="fas fa-dna"></i><span>العمليات</span>
+        </a>
+    
+    </li>
     <li >
         <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();

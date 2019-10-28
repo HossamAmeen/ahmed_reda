@@ -13,7 +13,7 @@ class QuestionController extends BackEndController
     {
         parent::__construct($model);
     }
-    public function store(Request $request){
+    public function store(QuestionRequest $request){
       
         // return $request->all();
         $requestArray = $request->all();
@@ -25,7 +25,7 @@ class QuestionController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    public function update($id , Request $request){
+    public function update($id , QuestionRequest $request){
         $row = $this->model->FindOrFail($id);
         $requestArray = $request->all();
         $requestArray['user_id'] = Auth::user()->id;

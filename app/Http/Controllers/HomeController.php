@@ -14,8 +14,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $pageTitle  = "Home";
-        if(  request()->segment(1) == "en" ){
+      $lang = request()->segment(1) ;
+     
+        if( $lang  == "en" ){
+
+            $pageTitle  = "Home";
             $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
             $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(2);
             $drugs = Drug::all()->sortByDesc("id")->where('en_title','!=',null)->take(10);
@@ -47,13 +50,42 @@ class HomeController extends Controller
         }
         else
         {
+            $pageTitle = "الرئيسيه";
 
+            $news = News::all()->sortByDesc("id")->take(3);
+            $questions = Question::all()->sortByDesc("id")->take(2);
+            $drugs = Drug::all()->sortByDesc("id")->take(10);
+            $firstOperation = Operation::all()->sortByDesc("id")->first();
+            $operations = Operation::all()->sortByDesc("id")->where('id' ,'!=', $firstOperation->id)->take(6);
+
+            $indexOperation = 1 ; 
+            $indexDrugs = 1 ;
+            foreach($operations as $operation){
+                if ($indexOperation % 2 == 0) {
+
+                    $operation1[] = $operation ;
+                } else {
+                    $operation2[] = $operation ;
+                }
+                $indexOperation++;               
+            }
+
+            foreach($drugs as $drug){
+                if ($indexDrugs % 2 == 0) {
+
+                    $drugs1[] = $drug ;
+                } else {
+                    $drugs2[] = $drug ;
+                }
+                $indexDrugs++;               
+            }
         }
+      
        
         $gallery =  Gallery::all()->sortByDesc("id")->first();
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
-        return view('front-end.en.index' , compact('pageTitle' , 'news' , 'gallery' , 
+        return view("front-end.$lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
         'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2', 'operation1' ,'operation2'));
     }
 
@@ -83,7 +115,7 @@ class HomeController extends Controller
     {
         $pageTitle  = "questions";
         if(  request()->segment(1) == "en" ){
-            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(8);
+            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null);
         }
         return view('front-end.en.questions' , compact('pageTitle' , 'questions') );
     }

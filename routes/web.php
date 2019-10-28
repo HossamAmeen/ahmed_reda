@@ -14,7 +14,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('news', 'NewsController');
             Route::resource('galleries', 'GalleryController');
             Route::resource('questions', 'QuestionController')->except('show');  
-            Route::resource('drugs', 'DrugsController');
+            Route::resource('drugs', 'DrugController');
             Route::resource('operations', 'OperationController');  
     });
 });

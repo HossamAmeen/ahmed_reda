@@ -8,10 +8,8 @@ use Image;
 class BackEndController extends Controller
 {
 
-    protected $model;
-
-   
-    public function __construct(Model $model)
+    protected $model;  
+     public function __construct(Model $model)
     {
         $this->model = $model;
        

@@ -14,7 +14,7 @@ class UserController extends BackEndController
         parent::__construct($model);
     }
 
-    public function store(Request $request){
+    public function store(UserRequest $request){
       $requestArray = $request->all();
         if($request->hasFile('image'))
         {
@@ -31,7 +31,7 @@ class UserController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    public function update($id , Request $request){
+    public function update($id , UserRequest $request){
           $requestArray = $request->all();
         if($request->hasFile('image'))
         {
