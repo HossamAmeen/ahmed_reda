@@ -16,9 +16,11 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('questions', 'QuestionController')->except('show');  
             Route::resource('drugs', 'DrugController');
             Route::resource('operations', 'OperationController');  
+            Route::resource('clinics', 'ClinicController');  
     });
 });
 Route::get('/', 'HomeController@index');
+Route::get('change/language/{lang}', 'HomeController@change_language');
 Route::prefix('ar')->group(function(){
     Route::get('/', 'HomeController@index');
     Route::get('index', 'HomeController@index');

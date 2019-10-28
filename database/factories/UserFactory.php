@@ -94,6 +94,19 @@ $factory->define(App\Models\Drug::class, function (Faker $faker) {
         'user_id' =>1 ,
     ];
 });
+$factory->define(App\Models\Clinic::class, function (Faker $faker) {
+    
+    return [
+        
+        'address' => $faker->name . "عربي",
+        'en_address' => $faker->name,
+        'phone' => $faker->name . "عربي",
+        
+        'appointment' => $faker->name . "عربي",
+        'en_appointment' => $faker->name,
+        'user_id' =>1 ,
+    ];
+});
 
 
 

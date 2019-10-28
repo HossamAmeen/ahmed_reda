@@ -57,19 +57,19 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 				  <li class="nav-item">
-					<a class="nav-link" href="index.html">الرئيسية</a>
+					<a class="nav-link" href="{{url('ar/index')}}">الرئيسية</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link" href="services.html">خدمات العيادة</a>
+					<a class="nav-link" href="{{url('ar/services')}}">خدمات العيادة</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="news.html">الاخبار</a>
+					<a class="nav-link" href="{{url('ar/news')}}">الاخبار</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="ask.html">سؤال وجواب</a>
+					<a class="nav-link" href="{{url('ar/questions')}}">سؤال وجواب</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="booking.html">احجز</a>
+					<a class="nav-link" href="{{url('ar/booking')}}">احجز</a>
 				  </li>
 					
 				</ul>
@@ -79,8 +79,8 @@
 					  اللغة
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="#">العربية</a>
-					  <a class="dropdown-item" href="#">الانجليزيه</a>
+					 
+					<a class="dropdown-item" href="{{url('change/language/en')}}">الانجليزيه</a>
 					</div>
 				  </li>
 				</ul>
@@ -116,14 +116,14 @@
 				<div class="col-md-4">
 					<div class="links">
 						<ul class="list-unstyled">
-							<li><a href="about.html">عن الطبيب</a></li>
-							<li><a href="news.html">الأخبار</a></li>
-							<li><a href="services.html">الخدمات</a></li>
+							<li><a href="{{url('ar/about/us')}}">عن الطبيب</a></li>
+							<li><a href="{{url('ar/news')}}">الأخبار</a></li>
+							<li><a href="{{url('ar/services')}}">الخدمات</a></li>
 						</ul>
 						<ul class="list-unstyled">
-							<li><a href="ask.html">سوال وجواب</a></li>
-							<li><a href="booking.html">احجز</a></li>
-							<li><a href="hepling.html">مساعدة</a></li>
+							<li><a href="{{url('ar/questions')}}">سوال وجواب</a></li>
+							<li><a href="{{url('ar/booking')}}">احجز</a></li>
+							<li><a href="{{url('ar/help')}}">مساعدة</a></li>
 						</ul>
 					</div>
 				</div>

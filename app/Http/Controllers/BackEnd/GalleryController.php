@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\BackEnd;
 use Auth;
+use App\Http\Requests\BackEnd\GalleryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;

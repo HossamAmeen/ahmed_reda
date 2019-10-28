@@ -75,8 +75,8 @@
 					  Language
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="{{url('index')}}">العربية</a>
-					  <a class="dropdown-item" href="{{url('index')}}">الانجليزيه</a>
+					  <a class="dropdown-item"  href="{{url('change/language/ar')}}">العربية</a>
+					
 					</div>
 				  </li>
 				</ul>

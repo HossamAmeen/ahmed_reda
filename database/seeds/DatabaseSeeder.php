@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
        factory('App\Models\Gallery',19)->create();
        factory('App\Models\Operation',10)->create();
        factory('App\Models\Drug',15)->create();
+       factory('App\Models\Clinic',3)->create();
          
     
 

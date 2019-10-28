@@ -63,6 +63,12 @@
         </a>
     
     </li>
+    <li class="{{is_active('clinics')}}">
+        <a href="{{route('clinics.index')}}"  class="{{is_active('clinics')}}">
+                <i class="fas fa-capsules"></i><span>العيادات</span>
+        </a>
+    
+    </li>
     <li class="{{is_active('services')}}">
         <a href="{{route('services.index')}}"  class="{{is_active('services')}}">
                 <i class="fas fa-stream"></i><span>خدمات</span>

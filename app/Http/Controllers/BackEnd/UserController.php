@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\BackEnd;
-
+use App\Http\Requests\BackEnd\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;

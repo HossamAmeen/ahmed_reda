@@ -12,11 +12,34 @@ use App\Models\Operation;
 use Mail;
 class HomeController extends Controller
 {
+    protected $lang;  
+    public function __construct()
+    {
+        $this->lang = request()->segment(1);
+       
+    }
+    public  function  change_language($lang){
+
+        $prefUrl = url()->previous() ; 
+         if($lang == "en")
+ 
+             $rout =   str_replace("ar","en",url()->previous());
+ 
+         else
+             $rout =   str_replace("en","ar",url()->previous());
+ 
+         //return $rout;
+         if( $rout == url()->previous()){
+             $rout = $rout . $lang;
+             //return $rout;
+         }
+         return redirect($rout);
+     }
     public function index()
     {
-      $lang = request()->segment(1) ;
+      
      
-        if( $lang  == "en" ){
+        if( $this->lang  == "en" ){
 
             $pageTitle  = "Home";
             $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
@@ -85,7 +108,7 @@ class HomeController extends Controller
         $gallery =  Gallery::all()->sortByDesc("id")->first();
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
-        return view("front-end.$lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
+        return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
         'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2', 'operation1' ,'operation2'));
     }
 
@@ -97,27 +120,31 @@ class HomeController extends Controller
             $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
             $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(2);
             // return $news;
-            return view('front-end.en.news', compact('pageTitle' , 'news'));
+          
         }
-       
+        return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
     }
 
     public function services()
     {
-        $pageTitle  = "services";
+        $pageTitle  = "الخدمات";
+        $services = Service::all()->sortByDesc("id")->take(6);
         if(  request()->segment(1) == "en" ){
-            $services = Service::all()->sortByDesc("id")->where('en_title','!=',null);
+            $pageTitle  = "services";
+            $services = Service::all()->sortByDesc("id")->where('en_title','!=',null)->take(6);
         }
-        return view('front-end.en.services' , compact('pageTitle' , 'services'));
+        return view('front-end.'.$this->lang.'.services' , compact('pageTitle' , 'services'));
     }
 
     public function questions()
-    {
-        $pageTitle  = "questions";
+    { 
+        $questions = Question::all()->sortByDesc("id")->take(10);
+        $pageTitle  = "سؤال وجواب";
         if(  request()->segment(1) == "en" ){
-            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null);
+            $pageTitle  = "questions";
+            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(10);
         }
-        return view('front-end.en.questions' , compact('pageTitle' , 'questions') );
+        return view('front-end.'.$this->lang.'.questions' , compact('pageTitle' , 'questions') );
     }
 
     public function booking(Request $request)
@@ -128,7 +155,8 @@ class HomeController extends Controller
             if ($request->isMethod('post')) {
                
                 $rules = $this->bookFormValidation();
-                $this->validate($request, $rules);
+                
+                $this->validate($request, $rules );
                 $data=[
                     'name' =>  $request->name,
                     'phone' => $request->phone,
@@ -144,7 +172,7 @@ class HomeController extends Controller
                 return redirect()->back();
             }
 
-            return view('front-end.en.booking', compact('pageTitle'));
+            return view('front-end.'.$this->lang.'.booking', compact('pageTitle'));
         }
         else{
 
@@ -160,7 +188,7 @@ class HomeController extends Controller
                     'phone' => $request->phone,
                     'note'=>$request->note,
                 ];
-                Mail::send('web.contact_mail',$data,function($message) use ($data){
+                Mail::send('front-end.en.booking_mail',$data,function($message) use ($data){
 
                     $message->from( $data['email'] , $data['name']);
                     $message->to("info@tibaroyal.com");
@@ -188,6 +216,28 @@ class HomeController extends Controller
                 $data=[
                     'note'=>$request->note,
                 ];
+                Mail::send('front-end.'.$this->lang.'.helping_mail',$data,function($message) use ($data){
+
+                    // $message->from( $data['email'] , $data['name']);
+                    $message->to("hossamameen948@gmail.com");
+                    // $message->subject($data['subject']);
+                });
+                $request->session()->flash('status', 'sent successfully');
+                return redirect()->back();
+            }
+           
+        }
+        else{
+            $pageTitle  = "المساعده";
+            
+            if ($request->isMethod('post')) {
+               
+                $rules = $this->helpFormValidation();
+                $messages = $this->helpMessageValidation();
+                $this->validate($request, $rules , $messages);
+                $data=[
+                    'note'=>$request->note,
+                ];
                 Mail::send('front-end.en.helping_mail',$data,function($message) use ($data){
 
                     // $message->from( $data['email'] , $data['name']);
@@ -197,8 +247,8 @@ class HomeController extends Controller
                 $request->session()->flash('status', 'sent successfully');
                 return redirect()->back();
             }
-            return view('front-end.en.helping', compact('pageTitle' , 'news'));
         }
+        return view('front-end.'.$this->lang.'.helping', compact('pageTitle' , 'news'));
        
     }
     public function aboutUs()
@@ -206,9 +256,9 @@ class HomeController extends Controller
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "about";
            
-            return view('front-end.en.about', compact('pageTitle' , 'news'));
+            return view('front-end.'.$this->lang.'.about', compact('pageTitle' , 'news'));
         }
-        return view('front-end.en.about_us');
+        return view('front-end.'.$this->lang.'.about_us');
     }
 
     function bookFormValidation()
@@ -230,6 +280,16 @@ class HomeController extends Controller
         );
     }
 
+    public function helpMessageValidation()
+    {
+        return array(
+            'note' => 'هذا الحقل (الاسم) يجب يحتوي ع حروف وارقام فقط ',
+           
+
+        );
+    }
+    
+    
     function bookMessageValidation()
     {
         return array(

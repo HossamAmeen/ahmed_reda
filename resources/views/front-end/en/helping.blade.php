@@ -24,7 +24,7 @@
 			<form action="{{url('en/help')}}" method="POST">
 				@csrf
 				<div class="form-group">
-				<textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Message"></textarea>
+				<textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Message" required></textarea>
 					<button  type="submit" class="btn btn-primary sent"> Send</button>
 				</div>	
 			</form>	

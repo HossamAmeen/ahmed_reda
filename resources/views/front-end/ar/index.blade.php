@@ -132,7 +132,7 @@
 				<div class="ope-image">
 					<img src="{{asset('uploads/operations/'.$operation->image)}}">
 				</div>
-				<a class="ope-type" href="#" class="ope-type">{{$operation->en_title}}</a>
+				<a class="ope-type" href="#" class="ope-type">{{$operation->title}}</a>
 			</div>
 
 			@endforeach
@@ -147,7 +147,7 @@
 				<div class="ope-image">
 					<img src="{{asset('uploads/operations/'.$operation->image)}}">
 				</div>
-				<a class="ope-type" href="#" class="ope-type">{{$operation->en_title}}</a>
+				<a class="ope-type" href="#" class="ope-type">{{$operation->title}}</a>
 			</div>
 
 			@endforeach
@@ -160,7 +160,7 @@
 				<div class="ope-image">
 					<img src="{{asset('uploads/operations/'.$operation->image)}}">
 				</div>
-				<span class="ope-type" href="#" class="ope-type">{{$firstOperation->en_title}}</span>
+				<span class="ope-type" href="#" class="ope-type">{{$firstOperation->title}}</span>
 			</div>
 
 
@@ -195,7 +195,7 @@
 							<ul class="list-unstyled">
 								@foreach ($drugs1 as $drug)
 								<li>
-									<span href="#">{{$drug->en_title}}</span>
+									<span href="#">{{$drug->title}}</span>
 								</li>
 								@endforeach
 							</ul>
@@ -204,7 +204,7 @@
 							<ul class="list-unstyled">
 								@foreach ($drugs2 as $drug)
 								<li>
-									<span href="#">{{$drug->en_title}}</span>
+									<span href="#">{{$drug->title}}</span>
 								</li>
 								@endforeach
 							</ul>
@@ -289,8 +289,8 @@
 						<img class="img-fluid" src="{{asset('uploads/news/'.$item->image)}}">
 					</div>
 					<div class="new-title text-center">
-						<h1>{{$item->en_title}}</h1>
-						<p> {{substr($item->en_description , 0 ,70 ) }} </p>
+						<h1>{{$item->title}}</h1>
+						<p> {{substr($item->description , 0 ,70 ) }} </p>
 						<span>{{$item->date}}</span>
 					</div>
 				</div>
@@ -363,8 +363,8 @@
 		<div class="container">
 				@foreach ($questions as $item)
 				<div class="question">
-					<h1>{{$item->en_question}}</h1>
-					<p>{{$item->en_answer}}</p>
+					<h1>{{$item->question}}</h1>
+					<p>{{$item->answer}}</p>
 					<i class="fas fa-sort-down"></i>
 				</div>
 				@endforeach

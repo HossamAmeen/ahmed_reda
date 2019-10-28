@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers\BackEnd;
-use App\Http\Requests\BackEnd\DrugRequest;
+use App\Http\Requests\BackEnd\ClienicRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Drug;
+use App\Models\Clinic;
 
 use Auth;
-class DrugController extends BackEndController
+class ClinicController extends BackEndController
 {
-    public function __construct(Drug $model)
+    public function __construct(Clinic $model)
     {
         parent::__construct($model);
     }
-    public function store(DrugRequest $request){
+    public function store(ClienicRequest $request){
       
         // return $request->all();
         $requestArray = $request->all();
@@ -25,7 +25,7 @@ class DrugController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    public function update($id , DrugRequest $request){
+    public function update($id , ClienicRequest $request){
         $row = $this->model->FindOrFail($id);
         $requestArray = $request->all();
         $requestArray['user_id'] = Auth::user()->id;
