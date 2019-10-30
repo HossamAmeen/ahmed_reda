@@ -10,7 +10,7 @@
     <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
     
     <!-- Main Page Title -->
-    <title>الرئيسية</title>
+    <title>{{ config('app.name' . $pageTitle , $briefs->title .'-'. $pageTitle) }}</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 

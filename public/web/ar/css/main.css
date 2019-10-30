@@ -1039,6 +1039,10 @@ body {
 	font-weight: bold;
 	color: #e0393b;
 }
+.new-detail .n-info .n-content .n-header a{
+	color: #e0393b;
+	text-decoration: none;
+}
 .new-detail .n-info .n-content ul li{
 	display: inline-block;
 	margin-left: 22px;

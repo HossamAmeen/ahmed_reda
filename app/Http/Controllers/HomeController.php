@@ -15,6 +15,10 @@ class HomeController extends Controller
     protected $lang;  
     public function __construct()
     {
+        if(  request()->segment(1) === null ) {
+            $this->lang = "ar";
+        }
+        else
         $this->lang = request()->segment(1);
        
     }
@@ -38,7 +42,6 @@ class HomeController extends Controller
     public function index()
     {
       
-     
         if( $this->lang  == "en" ){
 
             $pageTitle  = "Home";
@@ -114,17 +117,34 @@ class HomeController extends Controller
 
     public function news()
     {
-       
+        $news = News::orderBy('id', 'desc')->paginate(3);
+        $pageTitle  = "الأخبار";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
-            $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
-            $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(2);
+            $news = News::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(15);
+          
             // return $news;
           
         }
         return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
     }
-
+    public function show_news($id){
+        $news = News::find($id);
+        $pageTitle  = "الخبر";
+        if(  request()->segment(1) == "en" ){
+            $pageTitle  = "news";
+            $news = News::where( 'id', $id )
+                        ->where('en_title','!=',null )->first();
+          if(! isset($news) ) {
+            return redirect()->back();
+            // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
+          }
+           
+          
+        }
+        // return $news->en_description;
+        return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'news'));
+    }
     public function services()
     {
         $pageTitle  = "الخدمات";

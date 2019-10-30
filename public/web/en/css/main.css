@@ -1036,6 +1036,10 @@ body {
 .new-detail .n-info .n-photo .new-photo img{
 	width: 100%;
 }
+.new-detail .n-info .n-content .n-header a{
+	color: #e0393b;
+	text-decoration: none;
+}
 .new-detail .n-info .n-content .n-header{
 	font-size: 23px;
 	font-weight: bold;

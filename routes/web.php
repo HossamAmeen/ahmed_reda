@@ -25,6 +25,7 @@ Route::prefix('ar')->group(function(){
     Route::get('/', 'HomeController@index');
     Route::get('index', 'HomeController@index');
     Route::get('news', 'HomeController@news');
+    Route::get('news/{id}', 'HomeController@show_news');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
@@ -35,6 +36,7 @@ Route::prefix('en')->group(function(){
     Route::get('/', 'HomeController@index');
     Route::get('index', 'HomeController@index');
     Route::get('news', 'HomeController@news');
+    Route::get('news/{id}', 'HomeController@show_news');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
