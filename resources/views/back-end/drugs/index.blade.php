@@ -21,6 +21,7 @@
                         </div>
                     @endif
                     <table class="table table-bordered table-striped table-bottomless" id="ls-editable-table">
+                            <caption>الرجاء وضع عشرة فقط لتتناسب مع التصميم في الموقع</caption>
                         <thead>
                             <tr>
                             <th>#</th>

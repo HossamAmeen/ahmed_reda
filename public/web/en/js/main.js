@@ -34,8 +34,6 @@ $(function(){
 	// ask and questions 
 	
 	
-	
-	
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -51,5 +49,10 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 		
+		// ask and questions in home page
+	$(".ask .question i").click(function(){
+		
+		$(this).parent().find(".testo").toggleClass("act");
+	});
 	
 });

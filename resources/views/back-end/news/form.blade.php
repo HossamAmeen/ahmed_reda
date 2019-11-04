@@ -38,6 +38,7 @@
                  <strong>{{ $message }}</strong>
         </span>
         @enderror
+        <span style="margin-right: 15%">يفضل رفع الصوره 400 * 400 </span>
 </div>  
 @php $input = "date"; @endphp
  <div class="form-group">

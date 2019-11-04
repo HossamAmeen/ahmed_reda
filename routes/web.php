@@ -19,10 +19,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('clinics', 'ClinicController');  
     });
 });
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@home')->name('home');
 Route::get('change/language/{lang}', 'HomeController@change_language');
 Route::prefix('ar')->group(function(){
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@home');
     Route::get('index', 'HomeController@index');
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
@@ -33,8 +33,8 @@ Route::prefix('ar')->group(function(){
     Route::get('about/us', 'HomeController@aboutUs');
 });
 Route::prefix('en')->group(function(){
-    Route::get('/', 'HomeController@index');
-    Route::get('index', 'HomeController@index');
+    // Route::get('/', 'HomeController@index');
+    Route::get('index', 'HomeController@home')->name('en.index');
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
     Route::get('services', 'HomeController@services');

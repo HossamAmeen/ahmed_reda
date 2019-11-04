@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Gallery;
 use App\Models\Question;
+use App\Models\Clinic;
 use App\Models\Service;
 use App\Models\Drug;
 use App\Models\Operation;
@@ -23,7 +24,7 @@ class HomeController extends Controller
        
     }
     public  function  change_language($lang){
-
+      
         $prefUrl = url()->previous() ; 
          if($lang == "en")
  
@@ -31,15 +32,33 @@ class HomeController extends Controller
  
          else
              $rout =   str_replace("en","ar",url()->previous());
- 
-         //return $rout;
+        
+         if(  request()->segment(2) === null ) {
+             
+            if(  request()->segment(1) === "ar" ) {
+                return redirect()->route('en.index');
+            }
+         }
+        //  return $prefUrl;
          if( $rout == url()->previous()){
              $rout = $rout . $lang;
              //return $rout;
          }
+        //  return strripos($prefUrl , '/') ;
+        // return $rout;
+        //  return strlen($rout);
+        if(strripos($rout , '/')+3 == strlen($rout)){
+            $rout = $rout .'/index';
+        }
+        //  if($rout == )
+
          return redirect($rout);
      }
-    public function index()
+     public function index()
+     {
+        return redirect()->route('home');
+     }
+    public function home()
     {
       
         if( $this->lang  == "en" ){
@@ -106,13 +125,13 @@ class HomeController extends Controller
                 $indexDrugs++;               
             }
         }
-      
-       
+        
+        $clinics =  Clinic::all()->sortByDesc("id")->take(3);
         $gallery =  Gallery::all()->sortByDesc("id")->first();
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
         return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
-        'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2', 'operation1' ,'operation2'));
+        'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2', 'operation1' ,'operation2' , 'clinics'));
     }
 
     public function news()

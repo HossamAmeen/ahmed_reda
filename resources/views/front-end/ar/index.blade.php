@@ -289,7 +289,7 @@
 						<img class="img-fluid" src="{{asset('uploads/news/'.$item->image)}}">
 					</div>
 					<div class="new-title text-center">
-						<h1>{{$item->title}}</h1>
+							<h1><a href="{{url('en/news/'.$item->id)}}">{{$item->title}}</a></h1>
 						<p> {{substr($item->description , 0 ,70 ) }} </p>
 						<span>{{$item->date}}</span>
 					</div>
@@ -364,7 +364,7 @@
 				@foreach ($questions as $item)
 				<div class="question">
 					<h1>{{$item->question}}</h1>
-					<p>{{$item->answer}}</p>
+					<div class="testo">{{$item->answer}}</div>
 					<i class="fas fa-sort-down"></i>
 				</div>
 				@endforeach
@@ -390,27 +390,14 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<div class="col-md-4">
-				<div class="place-content">
-					<p>القوصية - ش الجـــــلاء مستشفــــــى الشفـــــاء بجـــــــوار البنك الأهلي</p>
-					<p>الاحد-الثلاثاء 6:1 م</p><span>0100123333 </span><i class="fas fa-phone"></i>
+				@foreach ($clinics as $item)
+				<div class="col-md-4">
+					<div class="place-content">
+						<p>{{$item->address}}</p>
+						<p>{{$item->appointment}}</p><span>{{$item->phone}} </span><i class="fas fa-phone"></i>
+					</div>
 				</div>
-
-			</div>
-			<div class="col-md-4">
-				<div class="place-content">
-					<p>ابو تيج - ش محمد محمود باشا المطرانية
-						أمام صيدلية د/ أشرف بكر</p>
-					<p>الاحد-الثلاثاء 6:1 م</p><span>0100123333 </span><i class="fas fa-phone"></i>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="place-content">
-					<p>ميدان المحطة أبراج خالد بن الوليد -
-						برج أ. الدور الســـــادس شقة (602)</p>
-					<p>الاحد-الثلاثاء 6:1 م</p><span>0100123333 </span><i class="fas fa-phone"></i>
-				</div>
-			</div>
+				@endforeach
 		</div>
 	</div>
 	<img class="img-fluid place-image" src="{{asset('web/ar/images/Web%201280%20%E2%80%93%202.png')}}">

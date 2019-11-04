@@ -12,7 +12,6 @@ body {
 .section{
 	padding: 60px 0;
 }
-
 /*--------------------End Global---------------*/
 
 /*--------------------Start NavBar  ---------------*/
@@ -42,6 +41,7 @@ body {
 
 .header{
 	background-image: linear-gradient(to bottom right,#ec5355, #ef8182);
+	overflow: hidden;
 }
 .header .header-content{
     max-width: 600px;	
@@ -448,7 +448,7 @@ body {
 }
 @media(max-width:576px){
 	.operations .first-line{
-		width:450px;
+		width:300px;
 	}
 }
 @media(min-width:577px) and (max-width:768px){
@@ -604,12 +604,12 @@ body {
 .news .news-content h1{
 	position: relative;
 	font-size: 26px;
-	color:#fff;
+	color:#000;
 }
 .news .news-content h1::before{
 	content: "";
     display: block;
-    background: #fff;
+    background: #e0393b;
     position: absolute;
     width: 70px;
     height: 2px;
@@ -623,7 +623,7 @@ body {
 .news .news-content h1::after{
 	content: "";
     display: block;
-    background: #fff;
+    background: #e0393b;
     position: absolute;
     width: 70px;
     height: 2px;
@@ -651,7 +651,10 @@ body {
 }
 .news-details .new-title h1{
 	font-size: 20px;
+}
+.news-details .new-title h1 a{
 	color:#E0393B;
+	text-decoration: none;
 }
 .news-details .new-title p{
 	font-size: 13px;
@@ -670,17 +673,14 @@ body {
     font-size: 15px;
 	color: #E0393B;
 	text-decoration: none;
-	
 	transition: all .5s ease-in-out;
+	font-weight: bold;
 }
 .news .more-news .more:hover{
 	background-color: #ed6162;
 	color:#000;
 
 }
-
-
-
 /*------------------End News---------------*/
 /*------------------Start Videos---------------*/
 .videos{
@@ -746,7 +746,9 @@ body {
 	color:#E0393B;
 
 }
-
+.embed-responsive {
+	margin-bottom: 30px;
+}
 /*------------------End Videos---------------*/
 
 
@@ -795,6 +797,7 @@ body {
 	position: absolute;
 	top: 0;
 	right:10px;
+	cursor: pointer;
 }
 
 .ask .more-asks .askmore{
@@ -810,6 +813,18 @@ body {
 	background-color: #fff;
 	color:#E0393B;
 
+}
+.testo{
+
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 5px;
+	display: none;
+	margin-bottom: 20px;
+	
+}
+.testo.act{
+	display: block;
 }
 /*-----------------End Ask---------------*/
 
@@ -907,6 +922,10 @@ body {
     margin-left: 15px;
     border-radius: 50%;
 	font-size: 20px;
+	cursor: pointer;
+	
+}
+.footer .social ul li a{
 	color:#fff;
 }
 
@@ -929,7 +948,6 @@ body {
 .footer .links ul li{
 	display: inline-block;
     margin-left: 15px;
-    color: #e0393b;
     transition: all .5s ease-in-out;
     font-size: 14px;
     cursor: pointer;
@@ -940,8 +958,14 @@ body {
     text-align: center;
 	
 }
+.footer .links ul li a{
+	  color: #e0393b;
+	text-decoration: none;
+}
 .footer .links ul li:hover{
 	background-color: #e0393b;
+}
+.footer .links ul li:hover a{
 	color:#fff;
 }
 @media(min-width:769px) and (max-width:991px){
@@ -1035,10 +1059,6 @@ body {
 }
 .new-detail .n-info .n-photo .new-photo img{
 	width: 100%;
-}
-.new-detail .n-info .n-content .n-header a{
-	color: #e0393b;
-	text-decoration: none;
 }
 .new-detail .n-info .n-content .n-header{
 	font-size: 23px;
@@ -1547,5 +1567,80 @@ active, .collapsible:hover {
 }
 /*------------------End About page----------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------Start Single New----------------------------------------------------------------------------------*/
+
+.same-new{
+	padding-top: 150px;
+	padding-bottom: 40px;
+
+}
+
+.same-new .title-of-new h3{
+	margin-top: 40px;
+	font-size: 22px;
+    font-weight: bold;
+    color: #000;
+	margin-bottom: 20px;
+	text-align: center
+}
+.same-new .photo-of-new img{
+	width:100%;
+	margin-bottom: 20px;
+}
+.same-new .single-detail{
+	color:#777777;
+	font-size: 14px;
+	line-height: 2.4;
+}
+
+.same-new .new-content ul li{
+	display: inline-block;
+	margin-left: 22px;
+	font-size: 12px;
+}
+.same-new .new-content ul li i{
+	margin-right: 7px;
+}
+.same-new .new-content ul li:nth-child(1),
+.same-new .new-content ul li:nth-child(3){
+	color: #e0393b;
+}
+.same-new .new-content .views span{
+	text-align: right;
+	display: block;
+	font-size: 12px;
+	color:#979797;
+}
+
+.related{
+	padding: 50px 0px;
+	background-color: #eee;
+}
+.related .relat-one img{
+	width:100%;
+	margin-bottom: 20px
+}
+.related .related-content h3{
+	font-size: 20px;
+	font-weight: 600;
+	color:#e0393b;
+	margin-bottom: 15px;
+}
+.related .related-content p{
+	font-size: 14px;
+	color:#Aaa;	
+}
+.related .related-content a{
+	margin-bottom: 20px;
+	display: block;
+}
+.related .hed-related{
+	margin-bottom: 30px;
+	font-size: 22px;
+	font-weight: bold;
+	background-color:#fff;
+	padding: 10px
+}
 
 

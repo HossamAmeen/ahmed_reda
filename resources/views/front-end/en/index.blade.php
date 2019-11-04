@@ -289,7 +289,7 @@
 						<img class="img-fluid" src="{{asset('uploads/news/'.$item->image)}}">
 					</div>
 					<div class="new-title text-center">
-						<h1>{{$item->en_title}}</h1>
+						<h1><a href="{{url('en/news/'.$item->id)}}">{{$item->en_title}}</a></h1>
 						<p> {{substr($item->en_description , 0 ,70 ) }} </p>
 						<span>{{$item->date}}</span>
 					</div>
@@ -368,13 +368,11 @@
 			@foreach ($questions as $item)
 			<div class="question">
 				<h1>{{$item->en_question}}</h1>
-				<p>{{$item->en_answer}}</p>
+				
+				<div class="testo">{{$item->en_answer}}</div>
 				<i class="fas fa-sort-down"></i>
 			</div>
 			@endforeach
-
-
-
 			<div class="more-asks text-center">
 				<a href="{{url('en/questions')}}" class="askmore">More Questions</a>
 			</div>
@@ -396,25 +394,17 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<div class="col-md-4">
-				{{-- <div class="place-content">
-						<p>Lorem Ipsum is simply</p>
-					<p>الاحد-الثلاثاء  6:1 م</p><span>0100123333 </span><i class="fas fa-phone"></i>
-					</div> --}}
-
-			</div>
+		
+			@foreach ($clinics as $item)
 			<div class="col-md-4">
 				<div class="place-content">
-					<p>{{$briefs->address}}</p>
-					<p>{{$briefs->appointment}}</p><span>{{$briefs->phone}} </span><i class="fas fa-phone"></i>
+					<p>{{$item->en_address}}</p>
+					<p>{{$item->en_appointment}}</p><span>{{$item->phone}} </span><i class="fas fa-phone"></i>
 				</div>
 			</div>
-			<div class="col-md-4">
-				{{-- <div class="place-content">
-						<p>Lorem Ipsum is simply</p>
-					<p>الاحد-الثلاثاء  6:1 م</p><span>0100123333 </span><i class="fas fa-phone"></i>
-					</div> --}}
-			</div>
+			@endforeach
+			
+			
 		</div>
 	</div>
 	<img class="img-fluid place-image" src="{{asset('web/en/images/Web%201280%20%E2%80%93%202.png')}}">

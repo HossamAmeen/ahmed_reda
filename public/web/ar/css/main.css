@@ -14,6 +14,7 @@ body {
 	padding: 60px 0;
 }
 
+
 /*--------------------End Global---------------*/
 
 /*--------------------Start NavBar  ---------------*/
@@ -37,6 +38,7 @@ body {
 
 .header{
 	background-image: linear-gradient(to bottom right,#ec5355, #ef8182);
+	overflow: hidden;
 }
 .header .header-content{
     max-width: 600px;	
@@ -443,7 +445,7 @@ body {
 }
 @media(max-width:576px){
 	.operations .first-line{
-		width:450px;
+		width:300px;
 	}
 }
 @media(min-width:577px) and (max-width:768px){
@@ -598,12 +600,12 @@ body {
 .news .news-content h1{
 	position: relative;
 	font-size: 26px;
-	color:#fff;
+	color:#000;
 }
 .news .news-content h1::before{
 	content: "";
     display: block;
-    background: #fff;
+    background: #e0393b;
     position: absolute;
     width: 70px;
     height: 2px;
@@ -617,7 +619,7 @@ body {
 .news .news-content h1::after{
 	content: "";
     display: block;
-    background: #fff;
+    background: #e0393b;
     position: absolute;
     width: 70px;
     height: 2px;
@@ -645,7 +647,10 @@ body {
 }
 .news-details .new-title h1{
 	font-size: 20px;
+}
+.news-details .new-title h1 a{
 	color:#E0393B;
+	text-decoration: none;
 }
 .news-details .new-title p{
 	font-size: 13px;
@@ -664,7 +669,7 @@ body {
     font-size: 15px;
 	color: #E0393B;
 	text-decoration: none;
-	
+	font-weight: bold;
 	transition: all .5s ease-in-out;
 }
 .news .more-news .more:hover{
@@ -740,6 +745,9 @@ body {
 	color:#E0393B;
 
 }
+.embed-responsive {
+	margin-bottom: 30px;
+}
 
 /*------------------End Videos---------------*/
 
@@ -806,6 +814,19 @@ body {
 	color:#E0393B;
 
 }
+.testo{
+
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 5px;
+	display: none;
+	margin-bottom: 20px;
+	
+}
+.testo.act{
+	display: block;
+}
+
 /*-----------------End Ask---------------*/
 
 
@@ -900,6 +921,10 @@ body {
     margin-left: 15px;
     border-radius: 50%;
 	font-size: 20px;
+	color:#fff;
+	cursor: pointer;
+}
+.footer .social ul li a{
 	color:#fff;
 }
 
@@ -1037,7 +1062,6 @@ body {
 .new-detail .n-info .n-content .n-header{
 	font-size: 23px;
 	font-weight: bold;
-	color: #e0393b;
 }
 .new-detail .n-info .n-content .n-header a{
 	color: #e0393b;
