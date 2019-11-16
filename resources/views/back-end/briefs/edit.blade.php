@@ -19,13 +19,27 @@
                 {{-- <div class="panel panel-default"> --}}
                    
                     <div class="panel-body">
-                        <form class="form-horizontal ls_form ls_form_horizontal" action="{{route('briefs.update' , ['id' => 1])}}" method="POST">
+                        <form class="form-horizontal ls_form ls_form_horizontal" action="{{route('briefs.update')}}" method="POST">
                             @csrf
                             {{ method_field('put') }}
                            
                             @php $input = "title"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">اسم الموقع</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+                                      class="form-control" required>
+                                      @error($input)
+                                      <span class="invalid-feedback" role="alert">
+                                               <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
+                                </div>
+                            </div>    
+                            @php $input = "en_title"; @endphp
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"> اسم الموقع بالانجليزي</label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
@@ -51,7 +65,7 @@
                                       @enderror
                                 </div>
                             </div>    
-                            @php $input = "address"; @endphp
+                            {{-- @php $input = "address"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">عنوان</label>
 
@@ -64,8 +78,8 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>    
-                            @php $input = "description"; @endphp
+                            </div>     --}}
+                            {{-- @php $input = "description"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">الوصف</label>
 
@@ -78,10 +92,10 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>   
+                            </div>    --}}
                            
                              
-                            @php $input = "phone"; @endphp
+                            {{-- @php $input = "phone"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">الهاتف</label>
 
@@ -94,7 +108,7 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>
+                            </div> --}}
                             @php $input = "video"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">رابط الفديو الأول</label>
@@ -151,7 +165,7 @@
                                       @enderror
                                 </div>
                             </div>    
-                            @php $input = "twitter"; @endphp
+                            {{-- @php $input = "twitter"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">twitter account</label>
 
@@ -178,7 +192,7 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>    
+                            </div>     --}}
                                                   
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">

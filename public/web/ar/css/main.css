@@ -42,7 +42,7 @@ body {
 }
 .header .header-content{
     max-width: 600px;	
-	margin-top: 300px;
+	margin-top: 210px;
 	text-align: center;
 }
 .header .header-content h1{
@@ -542,56 +542,12 @@ body {
 }
 /*-------------------End Drugs  ---------------*/
 
-/*------------------Start Photo---------------*/
-.photo{
-	background-color: #e0393b;
 
-}
-
-.photo .photo-content h1{
-	position: relative;
-	font-size: 26px;
-	margin-bottom: 20px;
-	color:#fff;
-}
-.photo .photo-content h1::before{
-	content: "";
-    display: block;
-    background: #fff;
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: 10px;
-    left: 0;
-    right: -300px;
-    border-radius: 5px;
-}
-.photo .photo-content h1::after{
-	content: "";
-    display: block;
-    background: #fff;
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: 10px;
-    left: 0;
-    right:300px;
-    border-radius: 5px;
-}
-
-.photo .carousel-inner img{
-	width:100%
-}
-
-/*------------------End Photo---------------*/
 
 /*------------------Start News---------------*/
 .news{
-	background-color: #e0393b;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .news .news-content{
 	margin-bottom: 40px;
@@ -635,12 +591,20 @@ body {
 	border-radius: 19px;
 	box-shadow: 0px 5px 3px #a81113, 0px -5px 3px #a81113;
 	margin-bottom: 20px;
+	transition: all .5s ease-in-out;
 	
+}
+.news-details:hover{
+	background-color:#eee;
 }
 .news-details .news-image img{
 	width:100%;
 	margin-bottom: 20px;
+	transition: all .5s ease-in-out;
 	
+}
+.news-details:hover .news-image img{
+	transform: scale(0.5);
 }
 .news-details .new-title{
 	padding: 10px 15px;
@@ -754,9 +718,6 @@ body {
 
 
 /*------------------Start Ask---------------*/
-.ask{
-	
-}
 .ask .ask-content h1{
 	font-size: 26px;
 	color:#E0393B;
@@ -776,10 +737,20 @@ body {
 .ask .question{
 	text-align: right;
 	position: relative;
+	transition: all .5s ease-in-out;
+}
+.ask .question:hover{
+	background-color: #e0393b;
+	color:#fff;
+	padding: 10px;
+}
+.ask .question:hover h1{
+	color:#fff;
 }
 .ask .question h1{
-	font-size: 20px;
-	color: #303030
+	font-size: 16px;
+	color: #303030;
+	cursor: pointer;
 }
 .ask .question p{
 	font-size: 15px;
@@ -798,8 +769,11 @@ body {
 	position: absolute;
 	top: 0;
 	left:10px;
+	cursor: pointer;
 }
-
+.ask .more-asks{
+	margin-top: 50px;
+}
 .ask .more-asks .askmore{
 	background-color: #000;;
     padding: 7px 20px;
@@ -818,9 +792,9 @@ body {
 
 	background-color: #eee;
 	padding: 10px;
-	border-radius: 5px;
 	display: none;
 	margin-bottom: 20px;
+	color:#000;
 	
 }
 .testo.act{
@@ -929,17 +903,14 @@ body {
 }
 
 .footer .social ul li:nth-child(1){
-	background-color: #148c52;
+	background-color: #1557b7;
    	
 }
-.footer .social ul li:nth-child(2){
-	    background: linear-gradient(to bottom, #de5242 0%, #4c2b92 100%)
-
-   	
-}
-.footer .social ul li:nth-child(3){
-	background-color:#1557b7;
-   	
+@media(max-width:768px){
+	.footer .social ul li{
+		width: 100%;
+		border-radius: 0;
+	}
 }
 .footer .links {
 	margin-top: 100px;
@@ -997,18 +968,18 @@ body {
 
 /*-----------------Start news---------------*/
 
-.news{
+.newss{
 	padding-top: 120px;
 	padding-bottom: 30px;
 	background-color: #fff;
 }
-.news h1{
+.newss h1{
 	font-size: 25px;
 	font-weight: bold;
 	position: relative;
 	margin-bottom: 30px;
 }
-.news h1::before{
+.newss h1::before{
 	content: "";
     background: #e0393b;
     position: absolute;
@@ -1022,7 +993,7 @@ body {
     border-radius: 5px;
 	
 }
-.news h1::after{
+.newss h1::after{
 	content: "";
     background: #e0393b;
     position: absolute;
@@ -1036,7 +1007,7 @@ body {
     border-radius: 5px
 	
 }
-.news p{
+.newss p{
 	color:#979797;
 	font-size: 15px;
 	
@@ -1590,7 +1561,7 @@ active, .collapsible:hover {
 	font-size: 22px;
     font-weight: bold;
     color: #000;
-	margin-bottom: 20px;
+	margin-bottom:60px;
 	text-align: center
 }
 .same-new .photo-of-new img{
@@ -1609,7 +1580,7 @@ active, .collapsible:hover {
 .same-new .new-content ul li{
 	display: inline-block;
 	margin-left: 22px;
-	font-size: 12px;
+	font-size: 14px;
 }
 .same-new .new-content ul li i{
 	margin-left: 7px;
@@ -1652,8 +1623,9 @@ active, .collapsible:hover {
 	margin-bottom: 30px;
 	font-size: 22px;
 	font-weight: bold;
-	background-color:#fff;
-	padding: 10px
+	background-color: #e0393b;
+	padding: 10px;
+	color:#fff;
 }
 
 

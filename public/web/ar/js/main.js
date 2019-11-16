@@ -50,10 +50,15 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-				// ask and questions in home page
+		// ask and questions in home page
 	$(".ask .question i").click(function(){
 		
 		$(this).parent().find(".testo").toggleClass("act");
+		$(this).toggleClass("active");
+	});
+	$(".ask .question h1").click(function(){
+		$(this).parent().find(".testo").toggleClass("act");
+		$(this).parent().find("i").toggleClass("active");
 	});
 	
 });

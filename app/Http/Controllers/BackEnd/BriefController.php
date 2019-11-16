@@ -14,11 +14,11 @@ class BriefController extends BackEndController
     {
         parent::__construct($model);
     }
-    public function index()
-    {
+    // public function index()
+    // {
        
-        return redirect()->route('briefs.edit' , ['id' => 1]);
-    }
+    //     return redirect()->route('briefs.edit' , ['id' => 1]);
+    // }
     public function login(Request $request)
     {
        
@@ -76,25 +76,26 @@ class BriefController extends BackEndController
       $request->session()->forget(['login']);
          return view('admin.lock' , compact('username'));
     }
-    // public function edit($id)
-    // {
-    //     $row = $this->model->FindOrFail(1);
-    //     $folderName = $this->getClassNameFromModel();
-    //     $routeName = $folderName;
-    //     // return $row;
-    //     return view('back-end.' . $folderName . '.edit', compact(
-    //         'row',
-    //         'routeName'
-    //     ));
+
+    public function editPrefs()
+    {
+        $row = $this->model->FindOrFail(1);
+        $folderName = $this->getClassNameFromModel();
+        $routeName = $folderName;
+        // return $row;
+        return view('back-end.briefs.edit', compact(
+            'row',
+            'routeName'
+        ));
         
   
-    // }
+    }
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
      
-       $pref = Brief::find($id);
+       $pref = Brief::find(1);
        if(!empty($pref)){
            $pref->fill($request->all());
            $pref->save();

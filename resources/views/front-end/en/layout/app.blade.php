@@ -10,7 +10,7 @@
     <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
     
     <!-- Main Page Title -->
-    <title>{{ config('app.name' . $pageTitle , $briefs->title .'-'. $pageTitle) }}</title>
+    <title>{{ config('app.name' . $pageTitle , $briefs->en_title .'-'. $pageTitle) }}</title>
     <!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">   
 	 
@@ -122,7 +122,7 @@
 							<li> <a class="nav-link" href="{{url('en/services')}}">Services</a></li>
 						</ul>
 						<ul class="list-unstyled">
-							<li><a class="nav-link" href="{{url('en/questions')}}">Questions</a></li>
+							<li><a class="nav-link" href="{{url('en/questions')}}">FAQs</a></li>
 							<li><a class="nav-link" href="{{url('en/booking')}}">Booking</a></li>
 							<li><a class="nav-link" href="{{url('en/help')}}">Help</a></li>
 						</ul>

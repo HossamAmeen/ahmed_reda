@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="page-header text-center">
 				<h1>Booking</h1>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+				
 			</div>
 		</div>
 	</div>

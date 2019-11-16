@@ -189,9 +189,10 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<ul class="list-unstyled">
+								
 								@foreach ($drugs2 as $drug)
 								<li>
-									<span href="#">{{$drug->en_title}}</span>
+									<a href="#">{{$drug->en_title}}</a>
 								</li>
 								@endforeach
 
@@ -201,7 +202,7 @@
 							<ul class="list-unstyled">
 								@foreach ($drugs1 as $drug)
 								<li>
-									<span href="#">{{$drug->en_title}}</span>
+									<a href="#">{{$drug->en_title}}</a>
 								</li>
 								@endforeach
 
@@ -224,46 +225,7 @@
 			Start Photo
 	   =====================================================================-->
 
-<div class="photo section">
 
-	<div class="photo-content">
-		<h1 class="text-center">Gallary </h1>
-	</div>
-
-	<div id="demo" class="carousel slide" data-ride="carousel">
-
-		<!-- Indicators -->
-		<ul class="carousel-indicators">
-			<li data-target="#demo" data-slide-to="0" class="active"></li>
-			<li data-target="#demo" data-slide-to="1"></li>
-			<li data-target="#demo" data-slide-to="2"></li>
-		</ul>
-
-		<!-- The slideshow -->
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="{{asset('uploads/galleries/'.$gallery->image)}}" alt="Los Angeles">
-			</div>
-			@foreach ($galleries as $item)
-			<div class="carousel-item">
-
-				<img src="{{asset('uploads/galleries/'.$item->image)}}" alt="Los Angeles">
-			</div>
-			@endforeach
-
-		</div>
-
-		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#demo" data-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
-		</a>
-		<a class="carousel-control-next" href="#demo" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
-
-	</div>
-
-</div>
 
 <!--==================================================================== 
 			End Photo

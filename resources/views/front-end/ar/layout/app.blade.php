@@ -66,7 +66,7 @@
 					<a class="nav-link" href="{{url('ar/news')}}">الاخبار</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="{{url('ar/questions')}}">سؤال وجواب</a>
+					<a class="nav-link" href="{{url('ar/questions')}}">اسئلة شائعة 	</a>
 				  </li>
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('ar/booking')}}">احجز</a>
@@ -107,12 +107,12 @@
 				<div class="col-md-4">
 					<div class="social">
 						<ul class="list-unstyled">
-							@if(isset($briefs->phone))
+							{{-- @if(isset($briefs->phone))
 								<li><a href="{{'https://wa.me/'.$briefs->phone}}"><i class="fab fa-whatsapp"></i></a></li>
 							@endif
 							@if(isset($briefs->instagram))
 						<li><a href="{{$briefs->instagram}}"><i class="fab fa-instagram"></i></a></li>
-							@endif
+							@endif --}}
 							@if(isset($briefs->facebook))
 							<li><a href="{{$briefs->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
 							@endif
@@ -127,7 +127,7 @@
 							<li><a href="{{url('ar/services')}}">الخدمات</a></li>
 						</ul>
 						<ul class="list-unstyled">
-							<li><a href="{{url('ar/questions')}}">سوال وجواب</a></li>
+							<li><a href="{{url('ar/questions')}}">اسئلة شائعة</a></li>
 							<li><a href="{{url('ar/booking')}}">احجز</a></li>
 							<li><a href="{{url('ar/help')}}">مساعدة</a></li>
 						</ul>

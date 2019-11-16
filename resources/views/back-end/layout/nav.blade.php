@@ -2,8 +2,8 @@
   <div class="container-fluid">
       <!--Logo text start-->
       <div class="header-logo">
-          <a href="index.html" title="">
-              <h1>Ahmed - Reda</h1>
+      <a href="{{route('home')}}" title="">
+              <h1>{{$briefs->title}}</h1>
           </a>
       </div>
       <!--Logo text End-->

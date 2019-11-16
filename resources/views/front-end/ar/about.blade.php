@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="doct-photo">
-						<img src="images/%D8%A7%D8%AD%D9%85%D8%AF%20%20%20%D8%B1%D8%B6%D8%A7.png" class="img-fluid">
+						<img src="{{asset('web/ar/images/%D8%A7%D8%AD%D9%85%D8%AF%20%20%20%D8%B1%D8%B6%D8%A7.png')}}" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -35,7 +35,7 @@
 							<p>النصوص بالتصاميم سواء كانت تصاميم مطبوعهلوريم ايبسوم هو نموذج افتراضي يوضع في التصا</p>
 						</div>
 						<div class="marke-photo">
-							<img src="images/agree-ankreuzen-arrangement-2.png">
+							<img src="{{asset('web/ar/images/agree-ankreuzen-arrangement-2.png')}}">
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -44,7 +44,7 @@
 							<p>النصوص بالتصاميم سواء كانت تصاميم مطبوعهلوريم ايبسوم هو نموذج افتراضي يوضع في التصا</p>
 						</div>
 						<div class="marke-photo">
-							<img src="images/agree-ankreuzen-arrangement-2.png">
+							<img src="{{asset('web/ar/images/agree-ankreuzen-arrangement-2.png')}}">
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -53,7 +53,7 @@
 							<p>النصوص بالتصاميم سواء كانت تصاميم مطبوعهلوريم ايبسوم هو نموذج افتراضي يوضع في التصا</p>
 						</div>
 						<div class="marke-photo">
-							<img src="images/agree-ankreuzen-arrangement-2.png">
+							<img src="{{asset('web/ar/images/agree-ankreuzen-arrangement-2.png')}}">
 						</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="main-photo">
-								<img src="images/background-blank-close-up-998591.png">
+								<img src="{{asset('web/ar/images/background-blank-close-up-998591.png')}}">
 							</div>
 						</div>
 					</div>

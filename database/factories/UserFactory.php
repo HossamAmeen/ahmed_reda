@@ -27,7 +27,8 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
 $factory->define(App\Models\Brief::class, function (Faker $faker) {
     return [
         'email' => $faker->safeEmail,
-        'title' => $faker->name,
+        'title' => "الموقع الرسمي للدكتور أحمد رضا",
+        'en_title' => "Dr Ahmed Reda Official Site",
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'phone' => $faker->e164PhoneNumber,
         'address' =>$faker->address ,

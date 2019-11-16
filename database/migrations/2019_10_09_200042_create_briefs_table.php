@@ -16,6 +16,7 @@ class CreateBriefsTable extends Migration
         Schema::create('briefs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
+            $table->string('en_title')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();
             // $table->string('appointment')->nullable()->default('الاحد-الثلاثاء 6:1 م');

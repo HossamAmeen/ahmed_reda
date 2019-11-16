@@ -51,7 +51,7 @@
  
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
-
+    <link rel="shortcut icon" href="{{asset('web/en/images/Web%201280%20%E2%80%93%205.png')}}" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}"></script>

@@ -1,5 +1,5 @@
 @extends('back-end.layout.app')
-@php $pageTitle = "إضافه خبر " @endphp  
+@php $pageTitle = "إضافه عملية " @endphp  
 @section('title')
     {{ $pageTitle }}
 @endsection

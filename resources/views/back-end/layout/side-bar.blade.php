@@ -29,7 +29,7 @@
    <!--Left navigation start-->
    <ul class="mainNav">
     <li >
-        <a href="{{route('briefs.edit' , ['id' => '1'])}}" class="{{is_active('briefs')}}">
+        <a href="{{route('prefs')}}" class="{{is_active('prefs')}}">
                 <i class="fas fa-edit"></i><span>تعديل بيانات الموقع</span>
         </a>
     </li>
@@ -51,12 +51,12 @@
                 </li>
         </ul>
     </li>
-    <li class="{{is_active('galleries')}}">
+    {{-- <li class="{{is_active('galleries')}}">
         <a href="{{route('galleries.index')}}"  class="{{is_active('galleries')}}">
                 <i class="fa fa-image"></i><span>معرض الصور</span>
         </a>
     
-    </li>
+    </li> --}}
     <li class="{{is_active('news')}}">
         <a href="{{route('news.index')}}"  class="{{is_active('news')}}">
                 <i class="far fa-newspaper"></i><span>الأخبار</span>
@@ -83,7 +83,7 @@
     </li>
     <li class="{{is_active('drugs')}}">
         <a href="{{route('drugs.index')}}"  class="{{is_active('drugs')}}">
-                <i class="fas fa-capsules"></i><span>الأدويه</span>
+                <i class="fas fa-capsules"></i><span>أمراض الذكورة</span>
         </a>
     
     </li>

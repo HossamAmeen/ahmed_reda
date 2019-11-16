@@ -47,19 +47,21 @@ class HomeController extends Controller
         //  return strripos($prefUrl , '/') ;
         // return $rout;
         //  return strlen($rout);
-        if(strripos($rout , '/')+3 == strlen($rout)){
-            $rout = $rout .'/index';
-        }
+        // if(strripos($rout , '/')+3 == strlen($rout)){
+        //     $rout = $rout .'/index';
+        // }
         //  if($rout == )
-
+    
          return redirect($rout);
      }
      public function index()
      {
         return redirect()->route('home');
      }
+     
     public function home()
     {
+        
       
         if( $this->lang  == "en" ){
 
@@ -287,17 +289,19 @@ class HomeController extends Controller
                 return redirect()->back();
             }
         }
-        return view('front-end.'.$this->lang.'.helping', compact('pageTitle' , 'news'));
+        return view('front-end.'.$this->lang.'.helping', compact('pageTitle'));
        
     }
     public function aboutUs()
     {
+        $pageTitle  = "عن الطبيب";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "about";
            
-            return view('front-end.'.$this->lang.'.about', compact('pageTitle' , 'news'));
+            return view('front-end.'.$this->lang.'.about', compact('pageTitle'));
         }
-        return view('front-end.'.$this->lang.'.about_us');
+      
+        return view('front-end.'.$this->lang.'.about', compact('pageTitle'));
     }
 
     function bookFormValidation()

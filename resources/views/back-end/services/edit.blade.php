@@ -1,7 +1,7 @@
 @extends('back-end.layout.app')
 @php
 
-    $pageTitle = "تعديل الخبر" ;
+    $pageTitle = "تعديل الخدمة" ;
  @endphp  
 @section('title')
     {{ $pageTitle }}
@@ -26,8 +26,8 @@
                     >  
                     @csrf
                     {{method_field('PUT')}}
-                @include('back-end.news.form')    
-              
+                    @include('back-end.'.$folderName.'.form')  
+                <img src="{{asset("uploads/".$routeName.'/'.$row->image)}}" height="300px" width="300px" style="margin:0 10%;"> <br><br>
                 <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
                             <button type="submit" class="btn btn-primary" onclick="myFunction()">تعديل</button>
