@@ -122,7 +122,7 @@
 
 		<hr class="first-line">
 		<div class="row text-center main-row">
-			@foreach ($operation1 as $operation)
+			@foreach ($operations as $operation)
 
 			<div class=" col-md-12 col-lg-4">
 				<div class="ope-image">
@@ -135,7 +135,7 @@
 
 
 		</div>
-		<hr class="first-line">
+		{{-- <hr class="first-line">
 		<div class="row text-center main-row">
 			@foreach ($operation2 as $operation)
 
@@ -149,18 +149,20 @@
 			@endforeach
 
 		</div>
-
-
-		<hr class="first-line">
 		<div class="row text-center main-row">
-			<div class="col-sm-12">
+			@foreach ($operation3 as $operation)
+
+			<div class=" col-md-12 col-lg-4">
 				<div class="ope-image">
 					<img src="{{asset('uploads/operations/'.$operation->image)}}">
 				</div>
-				<span class="ope-type" href="#" class="ope-type">{{$firstOperation->en_title}}</span>
+				<a class="ope-type" href="#" class="ope-type">{{$operation->en_title}}</a>
 			</div>
 
-		</div>
+			@endforeach
+
+		</div> --}}
+
 
 	</div>
 </div>
@@ -183,7 +185,7 @@
 <div class="drugs section">
 	<div class="container">
 		<div class="drugs-content">
-			<h1>Lorem Ipsum is simply dummy</h1>
+			<h1>Treatment of male types</h1>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="row">
@@ -215,6 +217,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!--==================================================================== 
 			End Drugs

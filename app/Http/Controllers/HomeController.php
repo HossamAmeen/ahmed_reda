@@ -70,7 +70,7 @@ class HomeController extends Controller
             $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(2);
             $drugs = Drug::all()->sortByDesc("id")->where('en_title','!=',null)->take(10);
             $firstOperation = Operation::all()->sortByDesc("id")->where('en_title','!=',null)->first();
-            $operations = Operation::all()->sortByDesc("id")->where('en_title','!=',null)->except('id' ,'!=', $firstOperation->id)->take(6);
+            $operations = Operation::all()->sortByDesc("id")->where('en_title','!=',null)->take(9);
            
             $indexOperation = 1 ; 
             $indexDrugs = 1 ;
@@ -78,8 +78,11 @@ class HomeController extends Controller
                 if ($indexOperation % 2 == 0) {
 
                     $operation1[] = $operation ;
-                } else {
+                }  elseif ($indexOperation % 2 == 1) {
                     $operation2[] = $operation ;
+                }
+                else{
+                    $operation3[] = $operation ;
                 }
                 $indexOperation++;               
             }
@@ -102,8 +105,8 @@ class HomeController extends Controller
             $news = News::all()->sortByDesc("id")->take(3);
             $questions = Question::all()->sortByDesc("id")->take(2);
             $drugs = Drug::all()->sortByDesc("id")->take(10);
-            $firstOperation = Operation::all()->sortByDesc("id")->first();
-            $operations = Operation::all()->sortByDesc("id")->where('id' ,'!=', $firstOperation->id)->take(6);
+            
+            $operations = Operation::all()->sortByDesc("id")->take(9);
 
             $indexOperation = 1 ; 
             $indexDrugs = 1 ;
@@ -111,8 +114,11 @@ class HomeController extends Controller
                 if ($indexOperation % 2 == 0) {
 
                     $operation1[] = $operation ;
-                } else {
+                } elseif ($indexOperation % 2 == 0) {
                     $operation2[] = $operation ;
+                }
+                else{
+                    $operation3[] = $operation ;
                 }
                 $indexOperation++;               
             }
@@ -133,7 +139,7 @@ class HomeController extends Controller
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
         return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
-        'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2', 'operation1' ,'operation2' , 'clinics'));
+        'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2','operations' , 'operation1' ,'operation2' ,'operation3', 'clinics'));
     }
 
     public function news()
@@ -157,7 +163,7 @@ class HomeController extends Controller
             $news = News::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
           if(! isset($news) ) {
-            return redirect()->back();
+            return redirect()->route('home');
             // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
           }
            
@@ -206,7 +212,7 @@ class HomeController extends Controller
                 Mail::send('front-end.en.booking_mail',$data,function($message) use ($data){
 
                     // $message->from( $data['email'] , $data['name']);
-                    $message->to("hossamameen948@gmail.com");
+                    $message->to("drahmed@drahmedreda.com");
                     // $message->subject($data['subject']);
                 });
                 $request->session()->flash('status', 'تم الارسال بنجاح!');
@@ -232,7 +238,7 @@ class HomeController extends Controller
                 Mail::send('front-end.en.booking_mail',$data,function($message) use ($data){
 
                     $message->from( $data['email'] , $data['name']);
-                    $message->to("info@tibaroyal.com");
+                    $message->to("drahmed@drahmedreda.com");
                     $message->subject($data['subject']);
                 });
                 $request->session()->flash('status', 'sent successfully');
@@ -260,7 +266,7 @@ class HomeController extends Controller
                 Mail::send('front-end.'.$this->lang.'.helping_mail',$data,function($message) use ($data){
 
                     // $message->from( $data['email'] , $data['name']);
-                    $message->to("hossamameen948@gmail.com");
+                    $message->to("drahmed@drahmedreda.com");
                     // $message->subject($data['subject']);
                 });
                 $request->session()->flash('status', 'sent successfully');
@@ -282,7 +288,7 @@ class HomeController extends Controller
                 Mail::send('front-end.en.helping_mail',$data,function($message) use ($data){
 
                     // $message->from( $data['email'] , $data['name']);
-                    $message->to("hossamameen948@gmail.com");
+                    $message->to("drahmed@drahmedreda.com");
                     // $message->subject($data['subject']);
                 });
                 $request->session()->flash('status', 'sent successfully');

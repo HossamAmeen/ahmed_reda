@@ -62,7 +62,7 @@
 					<a class="nav-link" href="{{url('en/news')}}">News</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="{{url('en/questions')}}">Ask & Answer</a>
+					<a class="nav-link" href="{{url('en/questions')}}">FAQs</a>
 				  </li>
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('en/booking')}}">Booking</a>
@@ -107,9 +107,11 @@
 				<div class="col-md-4">
 					<div class="social">
 						<ul class="list-unstyled">
-							<li><i class="fab fa-whatsapp"></i></li>
-							<li><i class="fab fa-instagram"></i></li>
-							<li><i class="fab fa-facebook-f"></i></li>
+							{{-- <li><i class="fab fa-whatsapp"></i></li>
+							<li><i class="fab fa-instagram"></i></li> --}}
+							@if(isset($briefs->facebook))
+							<li><a href="{{$briefs->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+							@endif
 						</ul>
 					</div>
 				</div>
@@ -124,7 +126,9 @@
 						<ul class="list-unstyled">
 							<li><a class="nav-link" href="{{url('en/questions')}}">FAQs</a></li>
 							<li><a class="nav-link" href="{{url('en/booking')}}">Booking</a></li>
-							<li><a class="nav-link" href="{{url('en/help')}}">Help</a></li>
+							@if(isset($briefs->facebook))
+							<li><a class="nav-link" href="{{$briefs->facebook}}">facebook</a></li>
+							@endif
 						</ul>
 					</div>
 				</div>

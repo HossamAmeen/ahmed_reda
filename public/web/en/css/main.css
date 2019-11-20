@@ -45,7 +45,7 @@ body {
 }
 .header .header-content{
     max-width: 600px;	
-	margin-top: 300px;
+	margin-top: 210px;
 	text-align: center;
 }
 .header .header-content h1{
@@ -65,6 +65,7 @@ body {
 .header .person img{
 	width:100%;
 	margin-top: 245px;
+	transform: rotateY(180deg);
 }
 
 
@@ -340,7 +341,7 @@ body {
 
 .clincs .main .ch__1 .hed-child1{
     bottom: 170px;
-    left: 50px;
+    left: 0px;
 }
 @media(max-width:768px){
 	.clincs .main .ch__1 .hed-child1{
@@ -350,7 +351,7 @@ body {
 	}
 }
 .clincs .main .ch__2 .hed-child2{
-    left: 50px;
+    left: 0px;
 	top: 15px;
 }
 @media(max-width:768px){
@@ -360,7 +361,7 @@ body {
 	}
 }
 .clincs .main .ch__3 .hed-child3{
-	right: 50px;
+	right: 120px;
     top: -160px;
 }
 @media(max-width:768px){
@@ -371,7 +372,7 @@ body {
 	}
 }
 .clincs .main .ch__4 .hed-child4{
-	left: 180px;
+	left: 120px;
     top: -160px;
 }
 @media(max-width:768px){
@@ -383,7 +384,7 @@ body {
 }
 
 .clincs .main .ch__5 .hed-child5{
-	right: 100px;
+	right: 170px;
     bottom: 15px;
 }
 @media(max-width:768px){
@@ -394,7 +395,7 @@ body {
 }
 
 .clincs .main .ch__6 .hed-child6{
-	left: 180px;
+	left: 120px;
     top: -15px;
 }
 @media(max-width:768px){
@@ -417,12 +418,12 @@ body {
 		right: 50px;
 	}
 	.clincs .main .ch__4 .hed-child4{
-		left:85px;
+		left:30px;
 		width:160px;
 		font-size: 13px;
 	}
 	.clincs .main .ch__6 .hed-child6{
-		left:85px;
+		left:40px;
 		width:160px;
 		font-size: 13px;
 		top:7px;
@@ -512,7 +513,6 @@ body {
 
 .drugs{
 	background-image: url("../images/%D8%A7%D9%85%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D8%B0%D9%83%D9%88%D8%B1%D8%A9.png");
-	text-align: right;
 	background-position: center;
 	background-size: cover;
 	text-align: left;
@@ -546,56 +546,12 @@ body {
 }
 /*-------------------End Drugs  ---------------*/
 
-/*------------------Start Photo---------------*/
-.photo{
-	background-color: #e0393b;
 
-}
-
-.photo .photo-content h1{
-	position: relative;
-	font-size: 26px;
-	margin-bottom: 20px;
-	color:#fff;
-}
-.photo .photo-content h1::before{
-	content: "";
-    display: block;
-    background: #fff;
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: 10px;
-    left: 0;
-    right: -300px;
-    border-radius: 5px;
-}
-.photo .photo-content h1::after{
-	content: "";
-    display: block;
-    background: #fff;
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: 10px;
-    left: 0;
-    right:300px;
-    border-radius: 5px;
-}
-
-.photo .carousel-inner img{
-	width:100%
-}
-
-/*------------------End Photo---------------*/
 
 /*------------------Start News---------------*/
 .news{
-	background-color: #e0393b;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .news .news-content{
 	margin-bottom: 40px;
@@ -638,13 +594,21 @@ body {
 	background-color: #fff;
 	border-radius: 19px;
 	box-shadow: 0px 5px 3px #a81113, 0px -5px 3px #a81113;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+	transition: all .5s ease-in-out;
 	
+}
+.news-details:hover{
+	background-color:#eee;
 }
 .news-details .news-image img{
 	width:100%;
 	margin-bottom: 20px;
+	transition: all .5s ease-in-out;
 	
+}
+.news-details:hover .news-image img{
+	transform: scale(0.5);
 }
 .news-details .new-title{
 	padding: 10px 15px;
@@ -775,10 +739,20 @@ body {
 }
 .ask .question{
 	position: relative;
+transition: all .5s ease-in-out;
+}
+.ask .question:hover{
+	background-color: #e0393b;
+	color:#fff;
+	padding: 10px;
+}
+.ask .question:hover h1{
+	color:#fff;
 }
 .ask .question h1{
-	font-size: 20px;
-	color: #303030
+	font-size: 16px;
+	color: #303030;
+	cursor: pointer;
 }
 .ask .question p{
 	font-size: 15px;
@@ -799,7 +773,9 @@ body {
 	right:10px;
 	cursor: pointer;
 }
-
+.ask .more-asks{
+	margin-top: 50px;
+}
 .ask .more-asks .askmore{
 	background-color: #000;;
     padding: 7px 20px;
@@ -808,6 +784,7 @@ body {
 	color: #fff;
 	text-decoration: none;
 	transition: all .5s ease-in-out;
+	
 }
 .ask .more-asks .askmore:hover{
 	background-color: #fff;
@@ -821,10 +798,14 @@ body {
 	border-radius: 5px;
 	display: none;
 	margin-bottom: 20px;
+color:#000;
 	
 }
 .testo.act{
 	display: block;
+}
+.ask .question i.active{
+	transform: rotate(-180deg);
 }
 /*-----------------End Ask---------------*/
 
@@ -885,6 +866,7 @@ body {
 .places i{
 	color:#fff;
 	margin-bottom: 30px;
+	margin-right: 5px;
 	
 }
 
@@ -919,7 +901,6 @@ body {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    margin-left: 15px;
     border-radius: 50%;
 	font-size: 20px;
 	cursor: pointer;
@@ -930,18 +911,16 @@ body {
 }
 
 .footer .social ul li:nth-child(1){
-	background-color: #148c52;
+	background-color: #1557b7;
    	
 }
-.footer .social ul li:nth-child(2){
-	    background: linear-gradient(to bottom, #de5242 0%, #4c2b92 100%)
+@media(max-width:768px){
+	.footer .social ul li{
+		width: 100%;
+		border-radius: 0;
+	}
+}
 
-   	
-}
-.footer .social ul li:nth-child(3){
-	background-color:#1557b7;
-   	
-}
 .footer .links {
 	margin-top: 100px;
 }
@@ -998,18 +977,18 @@ body {
 
 /*-----------------Start news---------------*/
 
-.news{
+.newss{
 	padding-top: 120px;
 	padding-bottom: 30px;
 	background-color: #fff;
 }
-.news h1{
+.newss h1{
 	font-size: 25px;
 	font-weight: bold;
 	position: relative;
 	margin-bottom: 30px;
 }
-.news h1::before{
+.newss h1::before{
 	content: "";
     background: #e0393b;
     position: absolute;
@@ -1023,7 +1002,7 @@ body {
     border-radius: 5px;
 	
 }
-.news h1::after{
+.newss h1::after{
 	content: "";
     background: #e0393b;
     position: absolute;
@@ -1037,7 +1016,7 @@ body {
     border-radius: 5px
 	
 }
-.news p{
+.newss p{
 	color:#979797;
 	font-size: 15px;
 	
@@ -1063,6 +1042,10 @@ body {
 .new-detail .n-info .n-content .n-header{
 	font-size: 23px;
 	font-weight: bold;
+	color: #e0393b;
+}
+.new-detail .n-info .n-content .n-header a{
+	text-decoration: none;
 	color: #e0393b;
 }
 .new-detail .n-info .n-content ul li{
@@ -1361,105 +1344,6 @@ active, .collapsible:hover {
 ---------------------------------------------------------------------------------------------------------------------------*/
 
 
-
-
-
-/*------------------Start help page----------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------*/
-
-.help{
-	padding-top: 120px;
-	padding-bottom: 30px;
-	background-color: #fff;
-}
-.help h1{
-	font-size: 23px;
-	font-weight: bold;
-	position: relative;
-	margin-bottom: 30px;
-}
-.help h1::before{
-	content: "";
-    background: #e0393b;
-    position: absolute;
-    width: 113px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: -8px;
-    left: -335px;
-    right: -300px;
-    border-radius: 5px;
-	
-}
-.help h1::after{
-	content: "";
-    background: #e0393b;
-    position: absolute;
-    width: 70px;
-    height: 2px;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    bottom: -16px;
-    left: -290px;
-    right: -300px;
-    border-radius: 5px
-	
-}
-.help p{
-	color:#979797;
-	font-size: 15px;
-	
-}
-.help-message{
-	padding: 120px 0;
-}
-.help-message .help-calling ul{
-	margin-bottom: 50px;
-}
-.help-message .help-calling ul li{
-	display: inline-block;
-}
-.help-message .help-calling ul li:nth-child(1){
-	margin-right: 60px;
-}
-.help-message .help-calling ul li i{
-	margin-left: 7px;
-	color:#e0393b;
-}
-.help-message .help-calling .form-group textarea{
-	box-shadow: 2px 3px 4px #e9e9e9;
-	margin-bottom: 20px;
-}
-.help-message .help-calling .form-group textarea::placeholder{
-	color:#e0393b;
-	font-size: 14px;
-}
-.help-message .help-calling .form-group .sent{
-	float: left;
-	width: 150px;
-	border-radius: 5px;
-	border:1px solid #e0393b;
-	background-color: #e0393b;
-	
-}
-@media(max-width:576px){
-	.help h1{
-		font-size: 20px;
-	}
-	.help p{
-		font-size: 14px;
-	}
-	.help h1::before{
-		left:-333px;
-	}
-	.help h1::after{
-		left:-291px;
-	}
-}
-/*------------------End help page----------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------*/
-
 /*-----------------Start About page----------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------*/
 
@@ -1581,7 +1465,7 @@ active, .collapsible:hover {
 	font-size: 22px;
     font-weight: bold;
     color: #000;
-	margin-bottom: 20px;
+	margin-bottom: 60px;
 	text-align: center
 }
 .same-new .photo-of-new img{
@@ -1596,8 +1480,7 @@ active, .collapsible:hover {
 
 .same-new .new-content ul li{
 	display: inline-block;
-	margin-left: 22px;
-	font-size: 12px;
+	font-size: 15px;
 }
 .same-new .new-content ul li i{
 	margin-right: 7px;
@@ -1626,6 +1509,7 @@ active, .collapsible:hover {
 	font-weight: 600;
 	color:#e0393b;
 	margin-bottom: 15px;
+	
 }
 .related .related-content p{
 	font-size: 14px;
@@ -1639,8 +1523,9 @@ active, .collapsible:hover {
 	margin-bottom: 30px;
 	font-size: 22px;
 	font-weight: bold;
-	background-color:#fff;
-	padding: 10px
+	background-color: #e0393b;
+	padding: 10px;
+	color:#fff;
 }
 
 

@@ -126,7 +126,7 @@
 		<h1 class="text-center">العمليات</h1>
 		<hr class="first-line">
 		<div class="row text-center main-row">
-			@foreach ($operation1 as $operation)
+			@foreach ($operations as $operation)
 
 			<div class=" col-md-12 col-lg-4">
 				<div class="ope-image">
@@ -139,7 +139,7 @@
 		</div>
 
 
-		<hr class="first-line">
+		{{-- <hr class="first-line">
 		<div class="row text-center main-row">
 			@foreach ($operation2 as $operation)
 
@@ -164,7 +164,7 @@
 			</div>
 
 
-		</div>
+		</div> --}}
 
 	</div>
 </div>

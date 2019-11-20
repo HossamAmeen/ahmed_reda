@@ -129,7 +129,9 @@
 						<ul class="list-unstyled">
 							<li><a href="{{url('ar/questions')}}">اسئلة شائعة</a></li>
 							<li><a href="{{url('ar/booking')}}">احجز</a></li>
-							<li><a href="{{url('ar/help')}}">مساعدة</a></li>
+							@if(isset($briefs->facebook))
+							<li><a href="{{$briefs->facebook}}">فيس بوك</a></li>
+							@endif
 						</ul>
 					</div>
 				</div>

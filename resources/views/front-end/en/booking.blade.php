@@ -40,8 +40,8 @@
 				<div class="form-group">
 					  <textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Notes" required></textarea>
 				  </div>
-			  <button type="submit" class="btn btn-primary sign">Book now</button>
-				<button type="submit" class="btn btn-primary call"> <span>Call</span> <i class="fas fa-phone"></i></button>
+				  <button type="submit" class="btn btn-primary sign">Book now</button>
+				  <button type="submit" class="btn btn-primary call"> <i class="fas fa-phone"></i> <span>Call</span></button>
 			</form>
 		</div>
 	</div>
