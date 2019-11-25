@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
        factory('App\Models\Brief',1)->create();
        factory('App\Models\User',15)->create();
        factory('App\Models\News',90)->create();
+       factory('App\Models\Artical',90)->create();
        factory('App\Models\Service',90)->create();
        factory('App\Models\Question',90)->create();
        factory('App\Models\Gallery',19)->create();

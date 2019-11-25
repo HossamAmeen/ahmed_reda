@@ -1,5 +1,8 @@
 @extends('back-end.layout.app')
-@php $pageTitle = "إضافه صورة " @endphp  
+@php
+
+    $pageTitle = "تعديل المقال" ;
+ @endphp  
 @section('title')
     {{ $pageTitle }}
 @endsection
@@ -9,26 +12,29 @@
     @component('back-end.layout.header')
         @slot('nav_title')
             {{ $pageTitle }}
+           
         @endslot
     @endcomponent
 
         @component('back-end.shared.create')
-            <form id="defaultForm" method="post" class="form-horizontal ls_form" action="{{ route($routeName.'.store') }}"
-                data-bv-message="This value is not valid"
-                data-bv-feedbackicons-valid="fa fa-check"
-                data-bv-feedbackicons-invalid="fa fa-bug"
-                data-bv-feedbackicons-validating="fa fa-refresh"
-                enctype="multipart/form-data"
-                >  
-                @csrf
-                @include('back-end.'.$folderName.'.form')  
+        <form id="defaultForm" method="post" class="form-horizontal ls_form" action="{{ route($routeName.'.update' , ['id' => $row]) }}"
+                    data-bv-message="This value is not valid"
+                    data-bv-feedbackicons-valid="fa fa-check"
+                    data-bv-feedbackicons-invalid="fa fa-bug"
+                    data-bv-feedbackicons-validating="fa fa-refresh"
+                    enctype="multipart/form-data"
+                    >  
+                    @csrf
+                    {{method_field('PUT')}}
+                    @include('back-end.'.$folderName.'.form')     
+                <img src="{{asset("uploads/".$routeName.'/'.$row->image)}}" height="300px" width="300px" style="margin:0 10%;"> <br><br>
                 <div class="form-group">
                         <div class="col-lg-9 col-lg-offset-3">
-                            <button type="submit" class="btn btn-primary" onclick="myFunction()">إضافة</button>
+                            <button type="submit" class="btn btn-primary" onclick="myFunction()">تعديل</button>
                         </div>
                     </div>
             </form>  
-        @endcomponent    
+        @endcomponent                    
 @endsection
 @push('css')
       <!-- Responsive Style For-->

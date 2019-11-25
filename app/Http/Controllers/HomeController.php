@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\Artical;
 use App\Models\Gallery;
 use App\Models\Question;
 use App\Models\Clinic;
@@ -28,10 +29,10 @@ class HomeController extends Controller
         $prefUrl = url()->previous() ; 
          if($lang == "en")
  
-             $rout =   str_replace("ar","en",url()->previous());
+             $rout =   str_replace("ar/","en/",url()->previous());
  
          else
-             $rout =   str_replace("en","ar",url()->previous());
+             $rout =   str_replace("en/","ar/",url()->previous());
         
          if(  request()->segment(2) === null ) {
              
@@ -75,10 +76,10 @@ class HomeController extends Controller
             $indexOperation = 1 ; 
             $indexDrugs = 1 ;
             foreach($operations as $operation){
-                if ($indexOperation % 2 == 0) {
+                if ($indexOperation < 3) {
 
                     $operation1[] = $operation ;
-                }  elseif ($indexOperation % 2 == 1) {
+                }  elseif ($indexOperation < 6) {
                     $operation2[] = $operation ;
                 }
                 else{
@@ -86,7 +87,7 @@ class HomeController extends Controller
                 }
                 $indexOperation++;               
             }
-
+                
             foreach($drugs as $drug){
                 if ($indexDrugs % 2 == 0) {
 
@@ -111,10 +112,10 @@ class HomeController extends Controller
             $indexOperation = 1 ; 
             $indexDrugs = 1 ;
             foreach($operations as $operation){
-                if ($indexOperation % 2 == 0) {
+                if ($indexOperation < 3) {
 
                     $operation1[] = $operation ;
-                } elseif ($indexOperation % 2 == 0) {
+                }  elseif ($indexOperation < 6) {
                     $operation2[] = $operation ;
                 }
                 else{
@@ -139,24 +140,27 @@ class HomeController extends Controller
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
         return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
-        'galleries' , 'questions' , 'firstOperation' , 'drugs1' ,'drugs2','operations' , 'operation1' ,'operation2' ,'operation3', 'clinics'));
+        'galleries' , 'questions'  , 'drugs1' ,'drugs2','operations' , 'operation1' ,'operation2' ,'operation3', 'clinics'));
     }
 
     public function news()
     {
-        $news = News::orderBy('id', 'desc')->paginate(3);
+        $news = News::orderBy('id', 'desc')->paginate(2);
+        $articals = Artical::orderBy('id', 'desc')->paginate(4);
         $pageTitle  = "الأخبار";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
-            $news = News::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(15);
-          
+            $news = News::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(2);
+            $articals = Artical::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(4);
             // return $news;
           
         }
-        return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
+        return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news' , 'articals'));
     }
     public function show_news($id){
+        
         $news = News::find($id);
+        $newss = News::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
         $pageTitle  = "الخبر";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
@@ -170,7 +174,7 @@ class HomeController extends Controller
           
         }
         // return $news->en_description;
-        return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'news'));
+        return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'news' , 'newss'));
     }
     public function services()
     {

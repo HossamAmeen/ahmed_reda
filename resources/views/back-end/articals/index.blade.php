@@ -1,5 +1,5 @@
 @extends('back-end.layout.app')
- @php $row_num = 1;   $pageTitle = "معرض الصور" @endphp  
+ @php $row_num = 1;   $pageTitle = "عرض المقالات" @endphp  
 @section('title')
    {{$pageTitle}}
 @endsection
@@ -12,7 +12,7 @@
          <a href="{{ route($routeName.'.create') }}">  
             <button class="alert-success"> <i class="fa fa-plus"></i> </button>
          </a>
-        @endslot
+        @endslot  
     @endcomponent
     @component('back-end.shared.table' )
                     @if (session()->get('action') )
@@ -24,9 +24,11 @@
                         <thead>
                             <tr>
                             <th>#</th>
-                            <th>الصورة</th>
-                                <th>السمتخدم</th>
-                                
+                            <th>العنوان</th>
+                            <th> العنوان بالانجليزي</th>
+                                <th>الوصف</th>
+                                <th>الصورة</th>
+                                <th>المستخدم</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -34,19 +36,13 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
+                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->en_title}}</td>
+                                    <td width="30%">{{$item->description}}</td>
                                     <td>  <img src="{{asset("uploads/".$routeName.'/'.$item->image)}}" height="60px" width="60px"></td>
                                     <td>{{ isset($item->user) ? $item->user->user_name : '' }}</td>
-                                   
                                     <td>
-                                            <form action="{{ route($routeName.'.destroy' , ['id' => $item]) }}" method="post">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('delete') }}
-                                                    
-                                                    <button type="submit" rel="tooltip" title="" class="btn btn-danger" onclick="check()" data-original-title="Remove {{ $sModuleName }}">
-                                                        <i class="material-icons">حذف</i>
-                                                    </button>
-                                                </form>
-                                   
+                                     @include('back-end.shared.buttons.delete')
                                     </td>
                                 </tr>
                             @endforeach

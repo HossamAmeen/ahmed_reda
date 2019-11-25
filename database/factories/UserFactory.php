@@ -52,6 +52,16 @@ $factory->define(App\Models\News::class, function (Faker $faker) {
         'user_id' =>1 ,
     ];
 });
+$factory->define(App\Models\Artical::class, function (Faker $faker) {
+   
+    return [
+        'title' => $faker->name . "عربي",
+        'en_title' => $faker->name,
+        'description' => " قبت بالولايات في حين. ان يقوم الدنمارك أخذ, الأمم وقامت المتّبعة ان وقد, كل دول واتّجه وبالتحديد،. قد إحكام الأولى وقوعها، قام, قد بين أواخر الصفحات, عل شيء لإعلان الأمور المتحدة. أعمال باستحداث عن حين, كل عدد لأداء أوروبا الفرنسية, بهيئة اليها لان قد. ومن كثيرة الشّعبين ثم, فصل ٣٠ أوسع الثالث. لان هو ويتّفق الأهداف. كل اتفاق أفريقيا لها, دفّة الإتحاد به، بـ, لإعادة مقاومة الشتوية مكن تم. ",
+        'en_description' => $faker->text ,
+        'user_id' =>1 ,
+    ];
+});
 $factory->define(App\Models\Service::class, function (Faker $faker) {
    
     return [

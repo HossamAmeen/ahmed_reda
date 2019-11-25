@@ -15,7 +15,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('users', 'UserController')->middleware('checkAdmin');
             Route::resource('services', 'ServiceController');
             Route::resource('news', 'NewsController');
-            // Route::resource('galleries', 'GalleryController');
+            Route::resource('articals', 'ArticalController');
             Route::resource('questions', 'QuestionController')->except('show');  
             Route::resource('drugs', 'DrugController');
             Route::resource('operations', 'OperationController');  
@@ -30,6 +30,7 @@ Route::prefix('ar')->group(function(){
     Route::get('index', 'HomeController@index');
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
+    Route::get('artical/{id}', 'HomeController@show_news');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
@@ -42,6 +43,7 @@ Route::prefix('en')->group(function(){
     Route::get('index', 'HomeController@home')->name('en.index');
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
+    Route::get('artical/{id}', 'HomeController@show_news');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
