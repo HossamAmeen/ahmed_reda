@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="photo-of-new">
-						<img src="{{asset('uploads/news/'.$data->image)}}">
+						<img src="{{asset('uploads/artical/'.$data->image)}}">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -39,12 +39,12 @@
 	</div>
 	<div class="related">
 			<div class="container">
-				<h3 class="hed-related">اخبار ذات صلة</h3>
+				<h3 class="hed-related">مقالات ذات صلة</h3>
 				<div class="row">
 					@foreach ($datas as $single_news)
 					<div class="col-md-4">
 							<div class="relat-one">
-									<img src="{{asset('uploads/news/'.$single_news->image)}}">
+									<img src="{{asset('uploads/artical/'.$single_news->image)}}">
 							</div>
 							<div class="related-content">
 									<h3>{{$single_news->title}}</h3>

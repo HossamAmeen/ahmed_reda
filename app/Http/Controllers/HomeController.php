@@ -159,8 +159,8 @@ class HomeController extends Controller
     }
     public function show_news($id){
         
-        $news = News::find($id);
-        $newss = News::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
+        $data = News::find($id);
+        $datas = News::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
         $pageTitle  = "الخبر";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
@@ -174,7 +174,26 @@ class HomeController extends Controller
           
         }
         // return $news->en_description;
-        return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'news' , 'newss'));
+        return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'data' , 'datas'));
+    }
+    public function show_artical($id){
+        
+        $data = Artical::find($id);
+        $datas = Artical::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
+        $pageTitle  = "الخبر";
+        if(  request()->segment(1) == "en" ){
+            $pageTitle  = "news";
+            $news = Artical::where( 'id', $id )
+                        ->where('en_title','!=',null )->first();
+          if(! isset($news) ) {
+            return redirect()->route('home');
+            // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
+          }
+           
+          
+        }
+        // return $news->en_description;
+        return view('front-end.'.$this->lang.'.single-artical', compact('pageTitle' , 'data' , 'datas'));
     }
     public function services()
     {
