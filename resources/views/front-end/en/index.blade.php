@@ -16,8 +16,11 @@
 			<div class="col-md-6">
 				<div class="header-content">
 					<h1>D Ahmed Reda</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-						the industry's standard dummy</p>
+					@if(isset($briefs->en_home_description))
+					<p>{{$briefs->en_home_description}}</p>
+							
+					@endif
+					
 				</div>
 				<div class="hed-logo">
 					<img src="{{asset('web/en/images/Web 1280 – 4.png')}}">

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Brief extends Model
 {
     protected $fillable = ['title' ,'en_title' , 'email' ,
-                         'address' ,'description', 'descriptionPoint' , 'phone' ,  'appointment' ,
+                         'address' ,'description','en_description','home_description','en_home_description', 'descriptionPoint' , 'phone' ,  'appointment' ,
                          'phone2' ,'facebook' , 'video' , 'twitter' ,'instagram' ];
     
 }

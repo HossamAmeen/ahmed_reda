@@ -642,9 +642,9 @@ body {
 
 }
 
-
-
 /*------------------End News---------------*/
+
+
 /*------------------Start Videos---------------*/
 .videos{
 	background-color:#b82a2c;
@@ -959,6 +959,9 @@ body {
 .copy h4{
 	font-size: 16px;
 }
+.copy h4 a{
+	color: #fff;
+}
 /*------------------End Copy---------------*/
 
 
@@ -1079,10 +1082,82 @@ body {
 }
 /*------------------End News---------------*/
 
+/*-----------------Start Articles---------------*/
+.articles{
+	padding: 60px 0;
+}
 
+.articles h1{
+	font-size: 25px;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 30px;
+}
+.articles h1::before{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 113px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -8px;
+    left: -295px;
+    right: -300px;
+    border-radius: 5px;
+	
+}
+.articles h1::after{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -16px;
+    left: -250px;
+    right: -300px;
+    border-radius: 5px
+	
+}
+.article-details .article-info{
+	text-align: right;
+}
+.article-details .article-info .article-image{
+	padding: 5px;
+	border:2px solid #eee;
+	margin-bottom: 20px;
+}
+.article-details .article-info .article-image .article-photo img{
+	width: 100%;
+} 
+.article-details .article-info .article-content .article-h a{
+	font-size: 20px;
+	font-weight: bold;
+	color:#000;
+	text-decoration: none;
+}
+.article-details .article-info .article-content i{
+	margin-left: 7px;
+	color: #e0393b;
+	font-size: 12px
+}
+.article-details .article-info .article-content span{
+	font-size: 12px
+}
+.article-details .article-info .article-content p{
+	font-size: 13px;
+	color: #979797
+}
+/*-----------------End Articles---------------*/
 
 /*------------------End News page----------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
 
 .services{
 	

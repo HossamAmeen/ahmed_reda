@@ -65,9 +65,9 @@
                                       @enderror
                                 </div>
                             </div>    
-                            {{-- @php $input = "address"; @endphp
+                            @php $input = "home_description"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">عنوان</label>
+                                <label class="col-lg-2 control-label">وصف الرئيسيه</label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
@@ -78,8 +78,22 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>     --}}
-                            {{-- @php $input = "description"; @endphp
+                            </div>    
+                            @php $input = "en_home_description"; @endphp
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"> وصف الرئيسيه بالانجليزي</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+                                      class="form-control">
+                                      @error($input)
+                                      <span class="invalid-feedback" role="alert">
+                                               <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
+                                </div>
+                            </div>    
+                            @php $input = "description"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">الوصف</label>
 
@@ -92,7 +106,21 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>    --}}
+                            </div>   
+                            @php $input = "en_description"; @endphp
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">الوصف بالانجليزي</label>
+
+                                <div class="col-lg-10">
+                                    <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+                                      class="form-control">
+                                      @error($input)
+                                      <span class="invalid-feedback" role="alert">
+                                               <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
+                                </div>
+                            </div>   
                            
                              
                             {{-- @php $input = "phone"; @endphp

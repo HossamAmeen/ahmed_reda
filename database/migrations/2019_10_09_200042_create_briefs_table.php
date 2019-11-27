@@ -21,6 +21,9 @@ class CreateBriefsTable extends Migration
             $table->string('address')->nullable();
             // $table->string('appointment')->nullable()->default('الاحد-الثلاثاء 6:1 م');
             $table->text('description')->nullable();
+            $table->text('en_description')->nullable();
+            $table->text('home_description')->nullable();
+            $table->text('en_home_description')->nullable();
             $table->text('descriptionPoint')->nullable();
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();

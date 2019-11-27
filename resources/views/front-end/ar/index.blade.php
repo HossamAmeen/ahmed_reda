@@ -17,8 +17,10 @@
 			<div class="col-md-6">
 				<div class="header-content">
 					<h1>د احمد رضا</h1>
-					<p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم
-						سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت</p>
+					@if(isset($briefs->home_description))
+					<p>{{$briefs->home_description}}</p>
+							
+					@endif
 				</div>
 				<div class="hed-logo">
 					<img src="{{asset('web/ar/images/Web 1280 – 4.png')}}">
@@ -137,34 +139,6 @@
 
 			@endforeach
 		</div>
-
-
-		{{-- <hr class="first-line">
-		<div class="row text-center main-row">
-			@foreach ($operation2 as $operation)
-
-			<div class=" col-md-12 col-lg-4">
-				<div class="ope-image">
-					<img src="{{asset('uploads/operations/'.$operation->image)}}">
-				</div>
-				<a class="ope-type" href="#" class="ope-type">{{$operation->title}}</a>
-			</div>
-
-			@endforeach
-		</div>
-
-
-		<hr class="first-line">
-		<div class="row text-center main-row">
-			<div class="col-sm-12">
-				<div class="ope-image">
-					<img src="{{asset('uploads/operations/'.$operation->image)}}">
-				</div>
-				<span class="ope-type" href="#" class="ope-type">{{$firstOperation->title}}</span>
-			</div>
-
-
-		</div> --}}
 
 	</div>
 </div>

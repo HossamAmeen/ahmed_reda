@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nour - Personal Portfolio HTML Template">
+	<meta name="description" content="{{$briefs->description}}">
     <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
     
     <!-- Main Page Title -->
-    <title>{{ config('app.name' . $pageTitle , $briefs->title .'-'. $pageTitle) }}</title>
+    <title>{{ config('app.name' . $pageTitle , $pageTitle . ' - '.  $briefs->title ) }}</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 
@@ -33,7 +33,7 @@
     <!-- Main style css -->
     <link rel="stylesheet" href="{{asset('web/ar/css/main.css')}}">
 	
-	<link rel="shortcut icon" href="{{asset('web/en/images/Web%201280%20%E2%80%93%205.png')}}" />
+	<link rel="shortcut icon" href="{{asset('web/en/images/icon.png')}}" />
 
 
 </head>
