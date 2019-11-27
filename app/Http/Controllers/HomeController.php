@@ -236,9 +236,10 @@ class HomeController extends Controller
 
                     // $message->from( $data['email'] , $data['name']);
                     $message->to("drahmed@drahmedreda.com");
-                    // $message->subject($data['subject']);
+                    $message->subject("booking");
                 });
-                $request->session()->flash('status', 'تم الارسال بنجاح!');
+                $request->session()->flash('status', 'sent successfully');
+               
                 return redirect()->back();
             }
 
@@ -259,12 +260,11 @@ class HomeController extends Controller
                     'note'=>$request->note,
                 ];
                 Mail::send('front-end.en.booking_mail',$data,function($message) use ($data){
-
-                    $message->from( $data['email'] , $data['name']);
                     $message->to("drahmed@drahmedreda.com");
-                    $message->subject($data['subject']);
+                    $message->subject("حجز");
                 });
-                $request->session()->flash('status', 'sent successfully');
+                $request->session()->flash('status', 'تم الإرسال بنجاح');
+             
                 return redirect()->back();
             }
             return view('front-end.ar.booking', compact('pageTitle'));
@@ -274,53 +274,53 @@ class HomeController extends Controller
        
     }
 
-    public function help(Request $request)
-    {
-        if(  request()->segment(1) == "en" ){
-            $pageTitle  = "helping";
+    // public function help(Request $request)
+    // {
+    //     if(  request()->segment(1) == "en" ){
+    //         $pageTitle  = "helping";
             
-            if ($request->isMethod('post')) {
+    //         if ($request->isMethod('post')) {
                
-                $rules = $this->helpFormValidation();
-                $this->validate($request, $rules);
-                $data=[
-                    'note'=>$request->note,
-                ];
-                Mail::send('front-end.'.$this->lang.'.helping_mail',$data,function($message) use ($data){
+    //             $rules = $this->helpFormValidation();
+    //             $this->validate($request, $rules);
+    //             $data=[
+    //                 'note'=>$request->note,
+    //             ];
+    //             Mail::send('front-end.'.$this->lang.'.helping_mail',$data,function($message) use ($data){
 
-                    // $message->from( $data['email'] , $data['name']);
-                    $message->to("drahmed@drahmedreda.com");
-                    // $message->subject($data['subject']);
-                });
-                $request->session()->flash('status', 'sent successfully');
-                return redirect()->back();
-            }
+    //                 // $message->from( $data['email'] , $data['name']);
+    //                 $message->to("drahmed@drahmedreda.com");
+    //                 // $message->subject($data['subject']);
+    //             });
+    //             $request->session()->flash('status', 'sent successfully');
+    //             return redirect()->back();
+    //         }
            
-        }
-        else{
-            $pageTitle  = "المساعده";
+    //     }
+    //     else{
+    //         $pageTitle  = "المساعده";
             
-            if ($request->isMethod('post')) {
+    //         if ($request->isMethod('post')) {
                
-                $rules = $this->helpFormValidation();
-                $messages = $this->helpMessageValidation();
-                $this->validate($request, $rules , $messages);
-                $data=[
-                    'note'=>$request->note,
-                ];
-                Mail::send('front-end.en.helping_mail',$data,function($message) use ($data){
+    //             $rules = $this->helpFormValidation();
+    //             $messages = $this->helpMessageValidation();
+    //             $this->validate($request, $rules , $messages);
+    //             $data=[
+    //                 'note'=>$request->note,
+    //             ];
+    //             Mail::send('front-end.en.helping_mail',$data,function($message) use ($data){
 
-                    // $message->from( $data['email'] , $data['name']);
-                    $message->to("drahmed@drahmedreda.com");
-                    // $message->subject($data['subject']);
-                });
-                $request->session()->flash('status', 'sent successfully');
-                return redirect()->back();
-            }
-        }
-        return view('front-end.'.$this->lang.'.helping', compact('pageTitle'));
+    //                 // $message->from( $data['email'] , $data['name']);
+    //                 $message->to("drahmed@drahmedreda.com");
+    //                 // $message->subject($data['subject']);
+    //             });
+    //             $request->session()->flash('status', 'sent successfully');
+    //             return redirect()->back();
+    //         }
+    //     }
+    //     return view('front-end.'.$this->lang.'.helping', compact('pageTitle'));
        
-    }
+    // }
     public function aboutUs()
     {
         $pageTitle  = "عن الطبيب";

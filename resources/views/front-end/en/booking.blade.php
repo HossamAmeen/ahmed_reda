@@ -25,6 +25,11 @@
 					</ul>
 				</div>
 			@endif
+			@if ( session('status') != null )
+			  <div class="alert alert-success">
+				{{session('status')}}
+			  </div>
+			  @endif
 			<form action="{{url('en/booking')}}" method="POST">
 				@csrf
 			  <div class="form-row">
