@@ -156,7 +156,7 @@
 	   =====================================================================-->
 	<div class="copy">
 		<div class="container">
-			<h4 class="text-center">copy right @ zedy 2019</h4>
+				<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/">zedy</a>2019</h4>
 		</div>
 	</div>
 	

@@ -10,7 +10,7 @@
     <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
     
     <!-- Main Page Title -->
-    <title>{{ config('app.name' . $pageTitle , $briefs->en_title .'-'. $pageTitle) }}</title>
+    <title>{{ config('app.name' . $pageTitle , $pageTitle .' - '.  $briefs->en_title ) }}</title>
     <!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">   
 	 
@@ -152,7 +152,7 @@
 	   =====================================================================-->
 	<div class="copy">
 		<div class="container">
-			<h4 class="text-center">copy right @ zedy 2019</h4>
+			<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/">zedy</a>2019</h4>
 		</div>
 	</div>
 	
