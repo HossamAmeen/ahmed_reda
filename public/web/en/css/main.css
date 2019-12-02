@@ -1030,7 +1030,7 @@ color:#000;
 	background-color: #fff;
 	padding: 38px;
 	margin-bottom: 38px;
-	text-align: right;
+	text-align: left;
 }
 .new-detail .n-info .n-photo{
 	padding: 5px;
@@ -1088,6 +1088,132 @@ color:#000;
 	
 }
 /*------------------End News---------------*/
+
+
+/*-----------------Start Articles---------------*/
+/*-----------------Start Articles---------------*/
+.articles{
+	padding:90px 0;
+}
+
+.articles h1{
+	font-size: 25px;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 30px;
+}
+.articles h1::before{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 113px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -8px;
+    left: -295px;
+    right: -300px;
+    border-radius: 5px;
+	
+}
+.articles h1::after{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -16px;
+    left: -250px;
+    right: -300px;
+    border-radius: 5px
+	
+}
+.article-details .article-info{
+	text-align: left;
+}
+.article-details .article-info .article-image{
+	padding: 5px;
+	border:2px solid #eee;
+	margin-bottom: 20px;
+}
+.article-details .article-info .article-image .article-photo img{
+	width: 100%;
+} 
+.article-details .article-info .article-content .article-h a{
+	font-size: 20px;
+	font-weight: bold;
+	color:#000;
+	text-decoration: none;
+}
+.article-details .article-info .article-content i{
+	margin-right: 7px;
+	color: #e0393b;
+	font-size: 12px
+}
+.article-details .article-info .article-content span{
+	font-size: 12px
+}
+.article-details .article-info .article-content p{
+	font-size: 13px;
+	color: #979797
+}
+
+.more-article{
+	padding: 30px 0;
+}
+.more-article .more-art{
+	color: #e0393b;
+	font-weight: 600;
+	text-decoration: none;
+}
+.more-article .more-art:hover{
+	color: #000;
+}
+
+
+
+.articless{
+	padding:50px 0;
+}
+
+.articless h1{
+	font-size: 25px;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 30px;
+}
+.articless h1::before{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 113px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -8px;
+    left: -295px;
+    right: -300px;
+    border-radius: 5px;
+	
+}
+.articless h1::after{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -16px;
+    left: -250px;
+    right: -300px;
+    border-radius: 5px
+	
+}
+/*-----------------End Articles---------------*/
+
 
 
 
@@ -1529,6 +1655,3 @@ active, .collapsible:hover {
 }
 
 
-.copy h4 a{
-	color: #fff;
-}

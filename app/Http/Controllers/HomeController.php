@@ -68,6 +68,7 @@ class HomeController extends Controller
 
             $pageTitle  = "Home";
             $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
+            $articals = Artical::all()->sortByDesc("id")->where('en_title','!=',null)->take(4);
             $questions = Question::all()->sortByDesc("id")->where('en_question','!=',null)->take(2);
             $drugs = Drug::all()->sortByDesc("id")->where('en_title','!=',null)->take(10);
             $firstOperation = Operation::all()->sortByDesc("id")->where('en_title','!=',null)->first();
@@ -104,6 +105,7 @@ class HomeController extends Controller
             $pageTitle = "الرئيسيه";
 
             $news = News::all()->sortByDesc("id")->take(3);
+            $articals = Artical::orderBy('id', 'desc')->paginate(4);
             $questions = Question::all()->sortByDesc("id")->take(2);
             $drugs = Drug::all()->sortByDesc("id")->take(10);
             
@@ -139,7 +141,7 @@ class HomeController extends Controller
         $gallery =  Gallery::all()->sortByDesc("id")->first();
         $galleries = Gallery::where('id' , '!=' ,$gallery->id )->orderBy('id', 'DESC')->get();
         
-        return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' , 'gallery' , 
+        return view("front-end.$this->lang.index" , compact('pageTitle' , 'news' ,'articals', 'gallery' , 
         'galleries' , 'questions'  , 'drugs1' ,'drugs2','operations' , 'operation1' ,'operation2' ,'operation3', 'clinics'));
     }
 
@@ -176,13 +178,27 @@ class HomeController extends Controller
         // return $news->en_description;
         return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'data' , 'datas'));
     }
+    public function articles()
+    {
+        
+        $articals = Artical::orderBy('id', 'desc')->paginate(6);
+        $pageTitle  = "المقالات";
+        if(  request()->segment(1) == "en" ){
+            $pageTitle  = "articals";
+           
+            $articals = Artical::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(6);
+            // return $news;
+          
+        }
+        return view('front-end.'.$this->lang.'.articles', compact('pageTitle'  , 'articals'));
+    }
     public function show_artical($id){
         
         $data = Artical::find($id);
         $datas = Artical::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
-        $pageTitle  = "الخبر";
+        $pageTitle  = "المقال";
         if(  request()->segment(1) == "en" ){
-            $pageTitle  = "news";
+            $pageTitle  = "article";
             $news = Artical::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
           if(! isset($news) ) {

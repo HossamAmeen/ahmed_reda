@@ -13,8 +13,6 @@ body {
 .section{
 	padding: 60px 0;
 }
-
-
 /*--------------------End Global---------------*/
 
 /*--------------------Start NavBar  ---------------*/
@@ -1084,7 +1082,7 @@ body {
 
 /*-----------------Start Articles---------------*/
 .articles{
-	padding: 60px 0;
+	padding:90px 0;
 }
 
 .articles h1{
@@ -1149,6 +1147,59 @@ body {
 .article-details .article-info .article-content p{
 	font-size: 13px;
 	color: #979797
+}
+
+.more-article{
+	padding: 30px 0;
+}
+.more-article .more-art{
+	color: #e0393b;
+	font-weight: 600;
+	text-decoration: none;
+}
+.more-article .more-art:hover{
+	color: #000;
+}
+
+
+
+.articless{
+	padding:50px 0;
+}
+
+.articless h1{
+	font-size: 25px;
+	font-weight: bold;
+	position: relative;
+	margin-bottom: 30px;
+}
+.articless h1::before{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 113px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -8px;
+    left: -295px;
+    right: -300px;
+    border-radius: 5px;
+	
+}
+.articless h1::after{
+	content: "";
+    background: #e0393b;
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    bottom: -16px;
+    left: -250px;
+    right: -300px;
+    border-radius: 5px
+	
 }
 /*-----------------End Articles---------------*/
 
@@ -1704,7 +1755,3 @@ active, .collapsible:hover {
 }
 
 
-
-.copy h4 a{
-	color: #fff;
-}

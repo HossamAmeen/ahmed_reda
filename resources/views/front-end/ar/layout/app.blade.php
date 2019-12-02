@@ -65,6 +65,9 @@
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('ar/news')}}">الاخبار</a>
 				  </li>
+				  <li class="nav-item">
+						<a class="nav-link" href="{{url('ar/articles')}}">المقالات</a>
+					  </li>
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('ar/questions')}}">اسئلة شائعة 	</a>
 				  </li>
