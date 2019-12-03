@@ -42,6 +42,7 @@ Route::prefix('ar')->group(function(){
 Route::prefix('en')->group(function(){
 
     Route::get('index', 'HomeController@home')->name('en.index');
+    Route::get('/', 'HomeController@home')->name('en.index');
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
     Route::get('articles', 'HomeController@articles');
