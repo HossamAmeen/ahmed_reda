@@ -94,7 +94,7 @@
 								<div class="col-md-4">
 									<div class="article-image">
 										<div class="article-photo">
-											<img class="img-fluid" src="{{asset('uploads/'.$artical->image)}}">
+											<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
 										</div>
 									</div>
 								</div>
