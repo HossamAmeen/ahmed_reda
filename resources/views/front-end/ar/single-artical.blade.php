@@ -49,7 +49,7 @@
 							<div class="related-content">
 									<h3>{{$single_news->title}}</h3>
 									<p class="n-paragraph"><?php echo substr($single_news->description , 50 ); ?></p>
-									<a href="{{url('ar/news/'.$single_news->id)}}">المزيد...</a>
+									<a href="{{url('ar/articals/'.$single_news->id)}}">المزيد...</a>
 							</div>
 						</div>
 					@endforeach
