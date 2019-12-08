@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="photo-of-new">
-						<img src="{{asset('uploads/news/'.$data->image)}}">
+						<img src="{{asset('uploads/articals/'.$data->image)}}">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -37,17 +37,17 @@
 	
 	<div class="related">
 			<div class="container">
-				<h3 class="hed-related">related news</h3>
+				<h3 class="hed-related">related articals</h3>
 				<div class="row">
 					@foreach ($datas as $single_news)
 					<div class="col-md-4">
 							<div class="relat-one">
-									<img src="{{asset('uploads/news/'.$single_news->image)}}">
+									<img src="{{asset('uploads/articals/'.$single_news->image)}}">
 							</div>
 							<div class="related-content">
 									<h3>{{$single_news->en_title}}</h3>
 									<p class="n-paragraph"><?php echo substr($single_news->en_description , 50 ); ?></p>
-								<a href="{{url('en/news/'.$single_news->id)}}">more...</a>
+								<a href="{{url('en/articals/'.$single_news->id)}}">more...</a>
 							</div>
 						</div>
 					@endforeach

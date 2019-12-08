@@ -162,13 +162,13 @@ class HomeController extends Controller
     public function show_news($id){
         
         $data = News::find($id);
-        $datas = News::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
+        $datas = News::all()->sortByDesc("id")->where('id','!=',$id)->take(3);
         $pageTitle  = "الخبر";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
             $news = News::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
-          if(! isset($news) ) {
+          if(!isset($news) ) {
             return redirect()->route('home');
             // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
           }
@@ -185,10 +185,7 @@ class HomeController extends Controller
         $pageTitle  = "المقالات";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "articals";
-           
             $articals = Artical::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(6);
-            // return $news;
-          
         }
         return view('front-end.'.$this->lang.'.articles', compact('pageTitle'  , 'articals'));
     }
@@ -199,9 +196,10 @@ class HomeController extends Controller
         $pageTitle  = "المقال";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "article";
-            $news = Artical::where( 'id', $id )
+            $data = Artical::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
-          if(! isset($news) ) {
+                      
+          if(!isset($data) ) {
             return redirect()->route('home');
             // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
           }
@@ -209,8 +207,10 @@ class HomeController extends Controller
           
         }
         // return $news->en_description;
+      
         return view('front-end.'.$this->lang.'.single-artical', compact('pageTitle' , 'data' , 'datas'));
     }
+
     public function services()
     {
         $pageTitle  = "الخدمات";
