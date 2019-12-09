@@ -26,7 +26,7 @@
 								
 							</div>
 					<p class="single-detail">
-						{{$data->en_description}}
+						{!!$data->en_description!!}
 					</p>
 					
 				</div>
@@ -45,9 +45,7 @@
 									<img src="{{asset('uploads/articals/'.$single_news->image)}}">
 							</div>
 							<div class="related-content">
-									<h3>{{$single_news->en_title}}</h3>
-									<p class="n-paragraph"><?php echo substr($single_news->en_description , 50 ); ?></p>
-								<a href="{{url('en/articals/'.$single_news->id)}}">more...</a>
+									<h3 ><a style="color:#e0393b" href="{{url('en/artical/'.$single_news->id)}}">{{$single_news->en_title}}</a></h3>
 							</div>
 						</div>
 					@endforeach

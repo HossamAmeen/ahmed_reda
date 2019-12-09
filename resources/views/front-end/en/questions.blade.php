@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="asking-header text-center">
 				<h1>Ask $ Answers</h1>
-				<p>Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy text</p>
+				
 			</div>
 			
 		</div>

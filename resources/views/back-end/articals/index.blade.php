@@ -38,7 +38,7 @@
                                     <td> {{$row_num++}}</td>
                                     <td>{{$item->title}}</td>
                                     <td>{{$item->en_title}}</td>
-                                    <td width="30%">{{$item->description}}</td>
+                                    <td width="30%">{!!$item->description!!}</td>
                                     <td>  <img src="{{asset("uploads/".$routeName.'/'.$item->image)}}" height="60px" width="60px"></td>
                                     <td>{{ isset($item->user) ? $item->user->user_name : '' }}</td>
                                     <td>

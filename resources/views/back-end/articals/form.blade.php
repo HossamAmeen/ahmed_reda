@@ -56,7 +56,7 @@
 <label class="col-md-2 control-label">الوصف بالعربي</label>
 @php $input = "description"; @endphp
 <div class="panel-body no-padding" >
-           <textarea class=""style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100">
+           <textarea class="summernote" style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100">
                     {{ isset($row) ? $row->{$input} : '' }}
    </textarea>
 </div><br>
@@ -69,7 +69,7 @@
 <label class="col-md-2 control-label">الوصف بالانجلزي</label>
 @php $input = "en_description"; @endphp
 <div class="panel-body no-padding" >
-           <textarea class=""style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
+           <textarea class="summernote" style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
                     {{ isset($row) ? $row->{$input} : '' }}
    </textarea>
 </div><br>

@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Str;
 class Artical extends Model
 {
     use SoftDeletes;
@@ -12,5 +12,10 @@ class Artical extends Model
     ];
     public function user(){
         return $this->belongsTo(User::class);
+    }
+    public function getEnSubDesAttribute()
+    {
+        // return "test";
+        return  Str::limit($this->en_description , 150 , "");
     }
 }

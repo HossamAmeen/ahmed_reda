@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="service-header text-center">
 				<h1>خدمات العيادة</h1>
-				<p>لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور</p>
+			
 			</div>
 			<div class="serv-info">
 				<div class="row">

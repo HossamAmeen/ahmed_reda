@@ -19,7 +19,7 @@
 					<h1>د احمد رضا</h1>
 					@if(isset($briefs->home_description))
 					<p>{{$briefs->home_description}}</p>
-							
+
 					@endif
 				</div>
 				<div class="hed-logo">
@@ -194,64 +194,90 @@
 			End Drugs
 	   =====================================================================-->
 
-	
-	<!--==================================================================== 
+
+<!--==================================================================== 
 			Start Articles
 	   =====================================================================-->
-	
-	
-	   <div class="articless">
-			<div class="container">
-				<div class="article-header text-center">
-					<h1>مقالات</h1>
+
+
+<div class="articless">
+	<div class="container">
+		<div class="article-header text-center">
+			<h1>مقالات</h1>
+		</div>
+	</div>
+</div>
+
+<div class="article-details">
+	<div class="container">
+
+		<div class="row">
+			@foreach ($articals1 as $artical)
+			<div class="col-sm-6">
+				<div class="article-info">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="article-image">
+								<div class="article-photo">
+									<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="article-content">
+								<h1 class="article-h">
+									<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->title}} </a>
+								</h1>
+								<i class="far fa-calendar-alt"></i> <span>{{$artical->date}} </span>
+								<p class="n-paragraph">
+									
+								</p>
+								<hr>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			@endforeach
 		</div>
-		
-		<div class="article-details">
-			<div class="container">
-
-					<div class="row">
-						@foreach ($articals as $artical)
-						<div class="col-sm-6">
-								<div class="article-info">
-									<div class="row">
-										<div class="col-md-4">
-											<div class="article-image">
-												<div class="article-photo">
-														<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
-												</div>
-											</div>
-										</div>
-										<div class="col-md-8">
-											<div class="article-content">
-												<h1 class="article-h">
-														<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->title}} </a>
-												</h1>
-												<i class="far fa-calendar-alt"></i> <span>{{$artical->date}} </span>
-												<p class="n-paragraph">
-														<?php echo substr($artical->description , 20) ; ?>
-											</p>
-											<hr>
-											</div>
-										</div>
+		<div class="row">
+				@foreach ($articals2 as $artical)
+				<div class="col-sm-6">
+					<div class="article-info">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="article-image">
+									<div class="article-photo">
+										<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
 									</div>
 								</div>
 							</div>
-						@endforeach
-						
-					
+							<div class="col-md-8">
+								<div class="article-content">
+									<h1 class="article-h">
+										<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->title}} </a>
+									</h1>
+									<i class="far fa-calendar-alt"></i> <span>{{$artical->date}} </span>
+									<p class="n-paragraph">
+									
+									</p>
+									<hr>
+								</div>
+							</div>
+						</div>
 					</div>
-			
-				<div class="more-article text-center">
-				<a href="{{url('ar/articals')}}" class="more-art">المزيد من المقالات</a>
-			</div>
 				</div>
+				@endforeach
+			</div>
+		<div class="more-article text-center">
+			<a href="{{url('ar/articles')}}" class="more-art">المزيد من المقالات</a>
 		</div>
-		<!--==================================================================== 
+	</div>
+</div>
+<!--==================================================================== 
 				End Articls
 		   =====================================================================-->
-		
+
 
 
 <!--==================================================================== 
@@ -272,8 +298,8 @@
 						<img class="img-fluid" src="{{asset('uploads/news/'.$item->image)}}">
 					</div>
 					<div class="new-title text-center">
-							<h1><a href="{{url('en/news/'.$item->id)}}">{{$item->title}}</a></h1>
-						<p> {{substr($item->description , 0 ,70 ) }} </p>
+						<h1><a href="{{url('ar/news/'.$item->id)}}">{{$item->title}}</a></h1>
+						
 						<span>{{$item->date}}</span>
 					</div>
 				</div>
@@ -344,16 +370,16 @@
 			<h1 class="text-center">سؤال واجابة</h1>
 		</div>
 		<div class="container">
-				@foreach ($questions as $item)
-				<div class="question">
-					<h1>{{$item->question}}</h1>
-					<div class="testo">{{$item->answer}}</div>
-					<i class="fas fa-sort-down"></i>
-				</div>
-				@endforeach
+			@foreach ($questions as $item)
+			<div class="question">
+				<h1>{{$item->question}}</h1>
+				<div class="testo">{{$item->answer}}</div>
+				<i class="fas fa-sort-down"></i>
+			</div>
+			@endforeach
 
 			<div class="more-asks text-center">
-			<a href="{{url('ar/questions')}}" class="askmore">المزيد من الاسئلة</a>
+				<a href="{{url('ar/questions')}}" class="askmore">المزيد من الاسئلة</a>
 			</div>
 		</div>
 	</div>
@@ -373,14 +399,14 @@
 
 	<div class="container">
 		<div class="row text-center">
-				@foreach ($clinics as $item)
-				<div class="col-md-4">
-					<div class="place-content">
-						<p>{{$item->address}}</p>
-						<p>{{$item->appointment}}</p><span>{{$item->phone}} </span><i class="fas fa-phone"></i>
-					</div>
+			@foreach ($clinics as $item)
+			<div class="col-md-4">
+				<div class="place-content">
+					<p>{{$item->address}}</p>
+					<p>{{$item->appointment}}</p><span>{{$item->phone}} </span><i class="fas fa-phone"></i>
 				</div>
-				@endforeach
+			</div>
+			@endforeach
 		</div>
 	</div>
 	<img class="img-fluid place-image" src="{{asset('web/ar/images/Web%201280%20%E2%80%93%202.png')}}">

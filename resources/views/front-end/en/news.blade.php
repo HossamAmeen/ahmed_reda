@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="page-header text-center">
 			<h1>Clinic News</h1>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+		
 		</div>
 
 	</div>
@@ -37,12 +37,12 @@
 												<a href="{{url('en/news/'.$new->id)}}">{{$new->en_title}}</a>	
 										</h1>
 										<ul class="list-unstyled">
-											<li><i class="fas fa-user"></i>clinic</li>
+											{{-- <li><i class="fas fa-user"></i>clinic</li> --}}
 											<li><i class="far fa-calendar-alt"></i> {{$new->date}} </li>
 											{{-- <li><i class="fas fa-comment"></i> 4 تعليقات</li> --}}
 										</ul>
 										<p class="n-paragraph">
-											{{$new->en_description}}
+											{!!$new->en_description!!}
 										</p>
 										<hr>
 										{{-- <div class="views">
@@ -101,11 +101,11 @@
 								<div class="col-md-8">
 									<div class="article-content">
 										<h1 class="article-h">
-										<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->en_title}}</a>
+										<a href="{{url('en/artical/'.$artical->id)}}">{{$artical->en_title}}</a>
 										</h1>
 										<i class="far fa-calendar-alt"></i> <span>{{$artical->date}}</span> 
 										<p class="n-paragraph">
-										<?php echo substr($artical->en_description , 50 ); ?>
+										
 									</p>
 									<hr>
 									</div>

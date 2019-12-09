@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="help-header text-center">
 				<h1>للمساعدة</h1>
-				<p>لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور</p>
+				
 			</div>
 			
 		</div>

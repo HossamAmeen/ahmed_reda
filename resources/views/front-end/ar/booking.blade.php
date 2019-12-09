@@ -48,7 +48,7 @@
 					  <textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="ملاحظات" required></textarea>
 				  </div>
 				  <button type="submit" class="btn btn-primary sign">احجز الان</button>
-				  <button type="submit" class="btn btn-primary call">  <i class="fas fa-phone"></i><span>اتصل بنا</span></button>
+				 
 		  </form>
 		</div>
 	</div>
