@@ -13,11 +13,11 @@ class OperationController extends BackEndController
         parent::__construct($model);
     }
     public function store(OpertionRequest $request){
-       
+
         $requestArray = $request->all();
         if($request->hasFile('image'))
-        { 
-            $fileName = $this->uploadImage(  $request , 530 , 432 );
+        {
+            $fileName = $this->uploadImage(  $request , 263 , 233 );
           if(isset($requestArray['image']) )
           $requestArray['image'] =  $fileName;
         }
@@ -35,11 +35,11 @@ class OperationController extends BackEndController
           if(isset($requestArray['image']) )
           $requestArray['image'] =  $fileName;
         }
-       
+
         $row = $this->model->FindOrFail($id);
-       
-       
-        
+
+
+
         $requestArray['user_id'] = Auth::user()->id;
         $row->update($requestArray);
         session()->flash('action', 'تم التحديث بنجاح');

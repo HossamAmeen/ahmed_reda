@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{$briefs->en_description}}">
     <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
-    
+
     <!-- Main Page Title -->
     <title>{{ config('app.name' . $pageTitle , $pageTitle .' - '.  $briefs->en_title ) }}</title>
     <!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">   
-	 
+	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+
      <!-- All css -->
     <link rel="stylesheet" href="{{asset('web/en/css/all.css')}}">
 
@@ -34,10 +34,10 @@
 	<link rel="shortcut icon" href="{{asset('web/en/images/icon.png')}}" />
 </head>
 <body>
-   
-    
-     <!--==================================================================== 
-			Start NavBar		
+
+
+     <!--====================================================================
+			Start NavBar
 	   =====================================================================-->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 			<div class="container">
@@ -58,7 +58,7 @@
 				  <li class="nav-item">
 					<a class="nav-link" href="{{url('en/services')}}">Services</a>
 				  </li>
-				  
+
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('en/news')}}">News</a>
 				  </li>
@@ -71,7 +71,7 @@
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('en/booking')}}">Booking</a>
 				  </li>
-					
+
 				</ul>
 				 <ul class="navbar-nav ml-auto">
 				  <li class="nav-item dropdown">
@@ -80,27 +80,27 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item"  href="{{url('change/language/ar')}}">العربية</a>
-					
+
 					</div>
 				  </li>
 				</ul>
 			  </div>
 			</div>
 	   </nav>
-			
-	<!--==================================================================== 
-			End NavBar		
+
+	<!--====================================================================
+			End NavBar
 	   =====================================================================-->
-	
-	
-	
+
+
+
      @yield('content')
 
-	
-	
-	
-	
-<!--==================================================================== 
+
+
+
+
+<!--====================================================================
 			Start  Footer
 	   =====================================================================-->
 	 <!-- Load Facebook SDK for JavaScript -->
@@ -131,7 +131,7 @@
 	 </div>
 	<div class="footer section">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col-md-4">
 					<div class="social">
@@ -139,16 +139,19 @@
 							{{-- <li><i class="fab fa-whatsapp"></i></li>
 							<li><i class="fab fa-instagram"></i></li> --}}
 							@if(isset($briefs->facebook))
-							<li><a href="{{$briefs->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="{{$briefs->facebook}}"  target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							@endif
+              @if(isset($briefs->youtube))
+              <li><a href="{{$briefs->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                @endif
 						</ul>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4">
 					<div class="links">
 						<ul class="list-unstyled">
-							<li><a class="nav-link" href="{{url('en/about/us')}}">About</a></li>
+							<li><a class="nav-link" href="{{url('en/about-us')}}">About</a></li>
 							<li> <a class="nav-link" href="{{url('en/news')}}">News</a></li>
 							<li> <a class="nav-link" href="{{url('en/services')}}">Services</a></li>
 						</ul>
@@ -156,8 +159,9 @@
 							<li><a class="nav-link" href="{{url('en/questions')}}">FAQs</a></li>
 							<li><a class="nav-link" href="{{url('en/booking')}}">Booking</a></li>
 							@if(isset($briefs->facebook))
-							<li><a class="nav-link" href="{{$briefs->facebook}}">facebook</a></li>
+							<li><a class="nav-link" href="{{$briefs->facebook}}"  target="_blank">facebook</a></li>
 							@endif
+
 						</ul>
 					</div>
 				</div>
@@ -167,29 +171,29 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
-	
-	<!--==================================================================== 
+
+	<!--====================================================================
 			End Footer
 	   =====================================================================-->
-	
-	<!--==================================================================== 
+
+	<!--====================================================================
 			Start Copy
 	   =====================================================================-->
 	<div class="copy">
 		<div class="container">
-			<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/">zedy</a>2019</h4>
+			<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/"  target="_blank">zedy</a>2019</h4>
 		</div>
 	</div>
-	
-		<!--==================================================================== 
+
+		<!--====================================================================
 			End Copy
 	   =====================================================================-->
-    
+
     <!-- Load Facebook SDK for JavaScript -->
-	
+
 	<!-- Load Facebook SDK for JavaScript -->
 	<div id="fb-root"></div>
 	<script>
@@ -215,21 +219,21 @@
 logged_in_greeting="أهلا بكم فى الموقع الرسمي للدكتور أحمد رضا "
 logged_out_greeting="أهلا بكم فى الموقع الرسمي للدكتور أحمد رضا ">
 	</div>
-	
-     
-    
-    
-    
-    
+
+
+
+
+
+
      <!--  jQuery js  -->
     <script src="{{asset('web/en/js/jquery-3.2.1.min.js')}}"></script>
     <!-- Popper Js  -->
     <script src="{{asset('web/en/js/popper.min.js')}}"></script>
     <!-- Bootstrap 4 Js  -->
     <script src="{{asset('web/en/js/bootstrap.min.js')}}"></script>
-    
-   
-    
+
+
+
     <!-- OWL Carousel JS  -->
     <script src="{{asset('web/en/js/owl.carousel.js')}}"></script>
 	  <script src="{{asset('web/en/js/owl.carousel.min.js')}}"></script>
@@ -243,9 +247,9 @@ logged_out_greeting="أهلا بكم فى الموقع الرسمي للدكتو
     <script defer src="{{asset('web/en/js/fontawesome.min.js')}}"></script>
     <!-- My Custom Js  -->
     <script src="{{asset('web/en/js/main.js')}}"></script>
-	
-   
-    
+
+
+
 </body>
 
 </html>

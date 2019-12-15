@@ -16,10 +16,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('services', 'ServiceController');
             Route::resource('news', 'NewsController');
             Route::resource('articals', 'ArticalController');
-            Route::resource('questions', 'QuestionController')->except('show');  
+            Route::resource('questions', 'QuestionController')->except('show');
             Route::resource('drugs', 'DrugController');
-            Route::resource('operations', 'OperationController');  
-            Route::resource('clinics', 'ClinicController');  
+            Route::resource('operations', 'OperationController');
+            Route::resource('clinics', 'ClinicController');
     });
 });
 
@@ -36,7 +36,7 @@ Route::prefix('ar')->group(function(){
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
     Route::any('help', 'HomeController@help');
-    Route::get('about/us', 'HomeController@aboutUs');
+    Route::get('about-us', 'HomeController@aboutUs');
 });
 
 Route::prefix('en')->group(function(){
@@ -51,7 +51,7 @@ Route::prefix('en')->group(function(){
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
     Route::any('help', 'HomeController@help');
-    Route::get('about/us', 'HomeController@aboutUs');
+    Route::get('about-us', 'HomeController@aboutUs');
 });
 // Route::fallback(function () {
 //     //

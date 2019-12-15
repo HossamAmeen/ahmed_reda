@@ -169,19 +169,22 @@ class HomeController extends Controller
         
         $data = News::find($id);
         $datas = News::all()->sortByDesc("id")->where('id','!=',$id)->take(3);
-        $pageTitle  = "الخبر";
+        $pageTitle  = $data->title;
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
-            $news = News::where( 'id', $id )
+            $data = News::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
-          if(!isset($news) ) {
+                     
+                          
+            
+          if(!isset($data) || $data->en_title ==""  ) {
             return redirect()->route('home');
             // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
           }
-           
-          
+          $pageTitle  = $data->en_title;
         }
-        // return $news->en_description;
+      
+      
         return view('front-end.'.$this->lang.'.single-new', compact('pageTitle' , 'data' , 'datas'));
     }
     public function articles()

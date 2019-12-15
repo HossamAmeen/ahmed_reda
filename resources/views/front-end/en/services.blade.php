@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="service-header text-center">
 				<h1>Clinic Services</h1>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+				
 			</div>
 			<div class="serv-info">
 				<div class="row">

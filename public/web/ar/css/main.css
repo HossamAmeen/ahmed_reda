@@ -896,18 +896,23 @@ body {
 	color:#fff;
 	cursor: pointer;
 }
-.footer .social ul li a{
+.footer .social ul li:nth-child(1){
+	background-color: #1557b7;	
+}
+.footer .social ul li:nth-child(1) a{
 	color:#fff;
 }
-
-.footer .social ul li:nth-child(1){
-	background-color: #1557b7;
-   	
+.footer .social ul li:nth-child(2){
+	background-color: #ff0000;	
+}
+.footer .social ul li:nth-child(2) a{
+	color:#fff;
 }
 @media(max-width:768px){
 	.footer .social ul li{
 		width: 100%;
 		border-radius: 0;
+		margin-bottom: 10px;
 	}
 }
 .footer .links {
