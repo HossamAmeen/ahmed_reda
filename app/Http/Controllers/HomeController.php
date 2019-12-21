@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
-use App\Models\Artical;
+use App\Models\Article;
 use App\Models\Gallery;
 use App\Models\Question;
 use App\Models\Clinic;
@@ -68,7 +68,7 @@ class HomeController extends Controller
 
             $pageTitle  = "Home";
             $news = News::all()->sortByDesc("id")->where('en_title','!=',null)->take(3);
-            $articals = Artical::all()->sortByDesc("id")->where('en_title','!=',null)->take(4);
+            $articals = Article::all()->sortByDesc("id")->where('en_title','!=',null)->take(4);
             $articals1 = $articals->slice(0,2);
             $articals2 = $articals->slice(2,2);
            
@@ -108,7 +108,7 @@ class HomeController extends Controller
             $pageTitle = "الرئيسيه";
 
             $news = News::all()->sortByDesc("id")->take(3);
-            $articals = Artical::orderBy('id', 'desc')->paginate(4);
+            $articals = Article::orderBy('id', 'desc')->paginate(4);
             $articals1 = $articals->slice(0,2);
             $articals2 = $articals->slice(2,2);
             $questions = Question::all()->sortByDesc("id")->take(2);
@@ -152,13 +152,13 @@ class HomeController extends Controller
 
     public function news()
     {
-        $news = News::orderBy('id', 'desc')->paginate(2);
-        $articals = Artical::orderBy('id', 'desc')->paginate(4);
+        $news = News::orderBy('id', 'desc')->paginate(6);
+        $articals = Article::orderBy('id', 'desc')->paginate(4);
         $pageTitle  = "الأخبار";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "news";
-            $news = News::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(2);
-            $articals = Artical::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(4);
+            $news = News::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(6);
+            $articals = Article::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(4);
             // return $news;
           
         }
@@ -190,22 +190,22 @@ class HomeController extends Controller
     public function articles()
     {
         
-        $articals = Artical::orderBy('id', 'desc')->paginate(6);
+        $articals = Article::orderBy('id', 'desc')->paginate(6);
         $pageTitle  = "المقالات";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "articals";
-            $articals = Artical::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(6);
+            $articals = Article::orderBy('id', 'desc')->where('en_title','!=',null)->paginate(6);
         }
         return view('front-end.'.$this->lang.'.articles', compact('pageTitle'  , 'articals'));
     }
     public function show_artical($id){
         
-        $data = Artical::find($id);
-        $datas = Artical::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
+        $data = Article::find($id);
+        $datas = Article::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
         $pageTitle  = "المقال";
         if(  request()->segment(1) == "en" ){
             $pageTitle  = "article";
-            $data = Artical::where( 'id', $id )
+            $data = Article::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
                       
           if(!isset($data) ) {

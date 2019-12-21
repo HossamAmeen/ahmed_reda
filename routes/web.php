@@ -15,7 +15,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::resource('users', 'UserController')->middleware('checkAdmin');
             Route::resource('services', 'ServiceController');
             Route::resource('news', 'NewsController');
-            Route::resource('articals', 'ArticalController');
+            Route::resource('articles', 'ArticlesController');
             Route::resource('questions', 'QuestionController')->except('show');
             Route::resource('drugs', 'DrugController');
             Route::resource('operations', 'OperationController');
@@ -31,7 +31,7 @@ Route::prefix('ar')->group(function(){
     Route::get('news', 'HomeController@news');
     Route::get('articles', 'HomeController@articles');
     Route::get('news/{id}', 'HomeController@show_news');
-    Route::get('artical/{id}', 'HomeController@show_artical');
+    Route::get('article/{id}', 'HomeController@show_artical');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');
@@ -46,7 +46,7 @@ Route::prefix('en')->group(function(){
     Route::get('news', 'HomeController@news');
     Route::get('news/{id}', 'HomeController@show_news');
     Route::get('articles', 'HomeController@articles');
-    Route::get('artical/{id}', 'HomeController@show_artical');
+    Route::get('article/{id}', 'HomeController@show_artical');
     Route::get('services', 'HomeController@services');
     Route::get('questions', 'HomeController@questions');
     Route::any('booking', 'HomeController@booking');

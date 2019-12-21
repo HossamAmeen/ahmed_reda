@@ -151,7 +151,7 @@
 				<div class="col-md-4">
 					<div class="links">
 						<ul class="list-unstyled">
-							<li><a class="nav-link" href="{{url('en/about-us')}}">About</a></li>
+							<li><a class="nav-link" href="{{url('en/articles')}}">Articles</a></li>
 							<li> <a class="nav-link" href="{{url('en/news')}}">News</a></li>
 							<li> <a class="nav-link" href="{{url('en/services')}}">Services</a></li>
 						</ul>

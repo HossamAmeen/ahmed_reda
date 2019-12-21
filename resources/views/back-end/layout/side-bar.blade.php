@@ -51,8 +51,8 @@
                 </li>
         </ul>
     </li>
-     <li class="{{is_active('articals')}}">
-        <a href="{{route('articals.index')}}"  class="{{is_active('articals')}}">
+     <li class="{{is_active('articles')}}">
+        <a href="{{route('articles.index')}}"  class="{{is_active('articles')}}">
                 <i class="fa fa-image"></i><span>المقالات</span>
         </a>
     

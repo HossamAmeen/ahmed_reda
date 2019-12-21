@@ -51,7 +51,7 @@
 						<img src="{{asset('web/ar/images/akxy8ppu.png')}}" class="img-fluid">
 					</div>
 				</div>
-				<h5 class=" all-head hed-child1">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class=" all-head hed-child1">جراحات أورام المسالك البولية والبروستاتا بالمناظير المتطورة</h5>
 			</div>
 			<div class="child ch__2">
 				<div class="t">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 
-				<h5 class="all-head hed-child2">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class="all-head hed-child2">زرع الكلي لمرضي الفشل الكلوي المزمن</h5>
 			</div>
 			<div class="child ch__3">
 				<div class="t">
@@ -69,7 +69,7 @@
 					</div>
 				</div>
 
-				<h5 class="all-head hed-child3">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class="all-head hed-child3">اورام المسالك البولية</h5>
 			</div>
 			<div class="child ch__4">
 				<div class="t">
@@ -77,7 +77,7 @@
 						<img src="{{asset('web/ar/images/shutterstock-34425004.png')}}" class="img-fluid">
 					</div>
 				</div>
-				<h5 class="all-head hed-child4">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class="all-head hed-child4">تضخم البروستاتا</h5>
 			</div>
 			<div class="child ch__5">
 				<div class="t">
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 
-				<h5 class="all-head hed-child5">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class="all-head hed-child5">حصصوات المسالك البولية</h5>
 			</div>
 			<div class="child ch__6">
 				<div class="t">
@@ -95,7 +95,7 @@
 					</div>
 				</div>
 
-				<h5 class="all-head hed-child6">علاج جميع انواع الحصوات المسالك البولية بالمناظر</h5>
+				<h5 class="all-head hed-child6">علاج السلس البولي للسيدات والتبول اللاإرادي عند الأطفال</h5>
 			</div>
 			<div class="child ch__7">
 				<div class="t">
@@ -219,14 +219,14 @@
 						<div class="col-md-4">
 							<div class="article-image">
 								<div class="article-photo">
-									<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
+									<img class="img-fluid" src="{{asset('uploads/articles/'.$artical->image)}}">
 								</div>
 							</div>
 						</div>
 						<div class="col-md-8">
 							<div class="article-content">
 								<h1 class="article-h">
-									<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->title}} </a>
+									<a href="{{url('ar/article/'.$artical->id)}}">{{$artical->title}} </a>
 								</h1>
 								<i class="far fa-calendar-alt"></i> <span>{{$artical->date}} </span>
 								<p class="n-paragraph">
@@ -248,14 +248,14 @@
 							<div class="col-md-4">
 								<div class="article-image">
 									<div class="article-photo">
-										<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
+										<img class="img-fluid" src="{{asset('uploads/articles/'.$artical->image)}}">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-8">
 								<div class="article-content">
 									<h1 class="article-h">
-										<a href="{{url('ar/artical/'.$artical->id)}}">{{$artical->title}} </a>
+										<a href="{{url('ar/article/'.$artical->id)}}">{{$artical->title}} </a>
 									</h1>
 									<i class="far fa-calendar-alt"></i> <span>{{$artical->date}} </span>
 									<p class="n-paragraph">

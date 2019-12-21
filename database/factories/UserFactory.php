@@ -52,7 +52,7 @@ $factory->define(App\Models\News::class, function (Faker $faker) {
         'user_id' =>1 ,
     ];
 });
-$factory->define(App\Models\Artical::class, function (Faker $faker) {
+$factory->define(App\Models\Article::class, function (Faker $faker) {
    
     return [
         'title' => $faker->name . "عربي",

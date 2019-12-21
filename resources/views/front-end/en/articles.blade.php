@@ -24,18 +24,18 @@
 									<div class="col-md-4">
 										<div class="article-image">
 											<div class="article-photo">
-													<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
+													<img class="img-fluid" src="{{asset('uploads/articles/'.$artical->image)}}">
 											</div>
 										</div>
 									</div>
 									<div class="col-md-8">
 										<div class="article-content">
 												<h1 class="article-h">
-														<a href="{{url('en/artical/'.$artical->id)}}">{{$artical->en_title}}</a>
+														<a href="{{url('en/article/'.$artical->id)}}">{{$artical->en_title}}</a>
 													</h1>
 													<i class="far fa-calendar-alt"></i> <span> {{$artical->date}} </span>
 													<p class="n-paragraph">
-												<?php echo substr($artical->en_description , 20) ; ?>
+														{!! \Illuminate\Support\Str::limit($artical->en_description, 150 ) !!}
 										</p>
 										<hr>
 										</div>
@@ -47,7 +47,7 @@
 				
 					
 				</div>
-			
+				{{ $articals->links() }}
 	</div>
 	<!--==================================================================== 
 			End Articls

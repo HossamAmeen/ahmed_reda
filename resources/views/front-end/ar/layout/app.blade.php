@@ -35,6 +35,7 @@
 
 	<link rel="shortcut icon" href="{{asset('web/en/images/icon.png')}}" />
 
+	@yield('header')
 
 </head>
 <body>
@@ -153,7 +154,7 @@
 				<div class="col-md-4">
 					<div class="links">
 						<ul class="list-unstyled">
-							<li><a href="{{url('ar/about-us')}}">عن الطبيب</a></li>
+							<li><a href="{{url('ar/articles')}}">المقالات</a></li>
 							<li><a href="{{url('ar/news')}}">الأخبار</a></li>
 							<li><a href="{{url('ar/services')}}">الخدمات</a></li>
 						</ul>

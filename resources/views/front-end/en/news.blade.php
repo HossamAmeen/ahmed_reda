@@ -42,7 +42,7 @@
 											{{-- <li><i class="fas fa-comment"></i> 4 تعليقات</li> --}}
 										</ul>
 										<p class="n-paragraph">
-											{!!$new->en_description!!}
+											{!! \Illuminate\Support\Str::limit($new->en_description, 150 ) !!}
 										</p>
 										<hr>
 										{{-- <div class="views">
@@ -57,7 +57,8 @@
 			</div>
 			<div class="col-md-4">
 				<div class="blugin-facebook">
-					<img class="img-fluid" src="{{asset('web/en/images/architecture-art-artistic-1702624.jpg')}}">
+					<div class="fb-page" data-href="https://www.facebook.com/UROClinicDrAhmedReda/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/UROClinicDrAhmedReda/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/UROClinicDrAhmedReda/">‎Uro-Clinic - عيادة دكتور أحمد رضا لجراحات ومناظير المسالك البولية‎</a></blockquote></div>
+					{{-- <img class="img-fluid" src="{{asset('web/en/images/architecture-art-artistic-1702624.jpg')}}"> --}}
 				</div>
 			</div>
 		</div>
@@ -94,14 +95,14 @@
 								<div class="col-md-4">
 									<div class="article-image">
 										<div class="article-photo">
-											<img class="img-fluid" src="{{asset('uploads/articals/'.$artical->image)}}">
+											<img class="img-fluid" src="{{asset('uploads/articles/'.$artical->image)}}">
 										</div>
 									</div>
 								</div>
 								<div class="col-md-8">
 									<div class="article-content">
 										<h1 class="article-h">
-										<a href="{{url('en/artical/'.$artical->id)}}">{{$artical->en_title}}</a>
+										<a href="{{url('en/article/'.$artical->id)}}">{{$artical->en_title}}</a>
 										</h1>
 										<i class="far fa-calendar-alt"></i> <span>{{$artical->date}}</span> 
 										<p class="n-paragraph">

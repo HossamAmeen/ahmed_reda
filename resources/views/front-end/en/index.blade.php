@@ -138,14 +138,14 @@
 							<div class="col-md-4">
 								<div class="article-image">
 									<div class="article-photo">
-										<img class="img-fluid" src="{{asset('uploads/articals/'.$item->image)}}">
+										<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-8">
 								<div class="article-content">
 									<h1 class="article-h">
-										<a href="{{url('en/artical/'.$item->id)}}">{{$item->en_title}}</a>
+										<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
 									</h1>
 									<i class="far fa-calendar-alt"></i> {{$item->date}}
 
@@ -166,14 +166,14 @@
 								<div class="col-md-4">
 									<div class="article-image">
 										<div class="article-photo">
-												<img class="img-fluid" src="{{asset('uploads/articals/'.$item->image)}}">
+												<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
 										</div>
 									</div>
 								</div>
 								<div class="col-md-8">
 									<div class="article-content">
 										<h1 class="article-h">
-											<a href="{{url('en/artical/'.$item->id)}}">{{$item->en_title}}</a>
+											<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
 										</h1>
 										<i class="far fa-calendar-alt"></i>{{$item->date}}
 

@@ -5,10 +5,10 @@ use Auth;
 use App\Http\Requests\BackEnd\NewsRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Artical;
-class ArticalController extends BackEndController
+use App\Models\Article;
+class ArticlesController extends BackEndController
 {
-    public function __construct(Artical $model)
+    public function __construct(Article $model)
     {
         parent::__construct($model);
     }
