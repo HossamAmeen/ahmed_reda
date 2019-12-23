@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{$briefs->en_description}}">
-    <meta name="keywords" content="new, html, Nour, design, creative, onepage, Portfolio, personal, advanced,">
-
+	<meta name="auther" content="Zedy Digital Agency">
+    <meta name="keywords" content="Doctor Reda , Male diseases , Urologist , Assuit , Advisory , Gallstones , Kidney , Diseases  ">
     <!-- Main Page Title -->
     <title>{{ config('app.name' . $pageTitle , $pageTitle .' - '.  $briefs->en_title ) }}</title>
     <!-- Google Font -->

@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 class Article extends Model
 {
     use SoftDeletes;
+
+    
     protected $fillable = [
         'title' , 'description', 'en_title' , 'en_description', 'image' , "user_id"
     ];

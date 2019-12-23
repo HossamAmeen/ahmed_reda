@@ -42,7 +42,7 @@
 			Start Drugs
 	   =====================================================================-->
 
-<div class="clincs section">
+{{-- <div class="clincs section">
 	<div class="container">
 		<div class="main">
 			<div class="child ch__1">
@@ -108,9 +108,87 @@
 		</div>
 	</div>
 
+</div> --}}
+<div class="clincs section">
+	<img src="{{asset('web/ar/images/Group 245.png')}}" class="img-fluid">
 </div>
 
 
+<div class="operations section">
+	<div class="container">
+		<h1 class="text-center">العمليات</h1>
+		<hr class="first-line">
+		<div class="row text-center main-row">
+			<div class=" col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">حصوات المسالك البولية</span>
+			</div>
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">أورام المسالك البولية</span>
+			</div>
+			<div class=" col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">تضخم البروستاتا</span>
+			</div>
+		</div>
+
+
+		<hr class="first-line">
+		<div class="row text-center main-row">
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">جراحات العيوب الخلقية
+					للأطفال</span>
+			</div>
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">عمليات الذكورة والعقم</span>
+			</div>
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">زرع الكلى لمرضى
+					الفشل الكلوى المزمن</span>
+			</div>
+		</div>
+
+
+		<hr class="first-line">
+		<div class="row text-center main-row">
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">جرحات اضطرابات البول</span>
+			</div>
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">جرحات السلس البولي</span>
+			</div>
+			<div class="col-md-12 col-lg-4">
+				<div class="ope-image">
+					<img src="images/t-1.png">
+				</div>
+				<span class="ope-type">جراحات المثانة العصبية</span>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 
 <!--====================================================================

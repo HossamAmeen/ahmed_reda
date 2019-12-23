@@ -42,7 +42,7 @@
 			Start Drugs
 	   =====================================================================-->
 
-<div class="clincs section">
+{{-- <div class="clincs section">
 	<div class="container">
 		<div class="main">
 			<div class="child ch__1">
@@ -108,11 +108,13 @@
 		</div>
 	</div>
 
-</div>
+</div> --}}
 <!--====================================================================
 			End Drugs
 	   =====================================================================-->
-
+	   <div class="clincs section">
+		<img src="{{asset('web/ar/images/Group 245.png')}}" class="img-fluid">
+	</div>
 
 <!--====================================================================
 			Start Articles
