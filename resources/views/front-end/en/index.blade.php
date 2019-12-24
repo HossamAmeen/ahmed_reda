@@ -49,151 +49,72 @@
 				<div class="t">
 					<div class="t1-img">
 						<img src="{{asset('web/en/images/akxy8ppu.png')}}" class="img-fluid">
-					</div>
-				</div>
-				<h5 class=" all-head hed-child1">Lorem Ipsum is simply dummy text of the printing </h5>
-			</div>
-			<div class="child ch__2">
-				<div class="t">
-					<div class="t2-img">
-						<img src="{{asset('web/en/images/shutterstock-409477429.png')}}" class="img-fluid">
-					</div>
-				</div>
-
-				<h5 class="all-head hed-child2">Lorem Ipsum is simply dummy text of the printing</h5>
-			</div>
-			<div class="child ch__3">
-				<div class="t">
-					<div class="t3-img">
-						<img src="{{asset('web/en/images/nerered3.png')}}" class="img-fluid">
-					</div>
-				</div>
-
-				<h5 class="all-head hed-child3">Lorem Ipsum is simply dummy text of the printing</h5>
-			</div>
-			<div class="child ch__4">
-				<div class="t">
-					<div class="t4-img">
-						<img src="{{asset('web/en/images/shutterstock-34425004.png')}}" class="img-fluid">
-					</div>
-				</div>
-				<h5 class="all-head hed-child4">Lorem Ipsum is simply dummy text of the printing</h5>
-			</div>
-			<div class="child ch__5">
-				<div class="t">
-					<div class="t5-img">
-						<img src="{{asset('web/en/images/shutterstock-204017278.png')}}" class="img-fluid">
-					</div>
-				</div>
-
-				<h5 class="all-head hed-child5">Lorem Ipsum is simply dummy text of the printing</h5>
-			</div>
-			<div class="child ch__6">
-				<div class="t">
-					<div class="t6-img">
-						<img src="{{asset('web/en/images/تبول.png')}}" class="img-fluid">
-					</div>
-				</div>
-
-				<h5 class="all-head hed-child6">Lorem Ipsum is simply dummy text of the printing</h5>
-			</div>
-			<div class="child ch__7">
-				<div class="t">
-					<h6 class="ch-head">
-						Clinic Services
-					</h6>
-				</div>
-
-			</div>
+</div>
+</div>
+<h5 class=" all-head hed-child1">Lorem Ipsum is simply dummy text of the printing </h5>
+</div>
+<div class="child ch__2">
+	<div class="t">
+		<div class="t2-img">
+			<img src="{{asset('web/en/images/shutterstock-409477429.png')}}" class="img-fluid">
 		</div>
 	</div>
+
+	<h5 class="all-head hed-child2">Lorem Ipsum is simply dummy text of the printing</h5>
+</div>
+<div class="child ch__3">
+	<div class="t">
+		<div class="t3-img">
+			<img src="{{asset('web/en/images/nerered3.png')}}" class="img-fluid">
+		</div>
+	</div>
+
+	<h5 class="all-head hed-child3">Lorem Ipsum is simply dummy text of the printing</h5>
+</div>
+<div class="child ch__4">
+	<div class="t">
+		<div class="t4-img">
+			<img src="{{asset('web/en/images/shutterstock-34425004.png')}}" class="img-fluid">
+		</div>
+	</div>
+	<h5 class="all-head hed-child4">Lorem Ipsum is simply dummy text of the printing</h5>
+</div>
+<div class="child ch__5">
+	<div class="t">
+		<div class="t5-img">
+			<img src="{{asset('web/en/images/shutterstock-204017278.png')}}" class="img-fluid">
+		</div>
+	</div>
+
+	<h5 class="all-head hed-child5">Lorem Ipsum is simply dummy text of the printing</h5>
+</div>
+<div class="child ch__6">
+	<div class="t">
+		<div class="t6-img">
+			<img src="{{asset('web/en/images/تبول.png')}}" class="img-fluid">
+		</div>
+	</div>
+
+	<h5 class="all-head hed-child6">Lorem Ipsum is simply dummy text of the printing</h5>
+</div>
+<div class="child ch__7">
+	<div class="t">
+		<h6 class="ch-head">
+			Clinic Services
+		</h6>
+	</div>
+
+</div>
+</div>
+</div>
 
 </div> --}}
 <!--====================================================================
 			End Drugs
 	   =====================================================================-->
-	   <div class="clincs section">
-		<img src="{{asset('web/ar/images/Group 245.png')}}" class="img-fluid">
-	</div>
-
-<!--====================================================================
-			Start Articles
-	   =====================================================================-->
-
-
-
-<div class="articles">
-	<div class="container">
-		<div class="article-header text-center">
-			<h1>Articles</h1>
-		</div>
-	</div>
+<div class="clincs section">
+	<img src="{{asset('web/ar/images/Group 245.png')}}" class="img-fluid">
 </div>
-
-<div class="article-details">
-	<div class="container">
-		<div class="row">
-			@foreach ($articals1 as $item)
-			<div class="col-sm-6">
-					<div class="article-info">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="article-image">
-									<div class="article-photo">
-										<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-8">
-								<div class="article-content">
-									<h1 class="article-h">
-										<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
-									</h1>
-									<i class="far fa-calendar-alt"></i> {{$item->date}}
-
-									<hr>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			@endforeach
-
-		</div>
-		<div class="row">
-				@foreach ($articals2 as $item)
-				<div class="col-sm-6">
-						<div class="article-info">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="article-image">
-										<div class="article-photo">
-												<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="article-content">
-										<h1 class="article-h">
-											<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
-										</h1>
-										<i class="far fa-calendar-alt"></i>{{$item->date}}
-
-										<hr>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				@endforeach
-
-			</div>
-
-	</div>
-</div>
-<!--====================================================================
-			End Articls
-	   =====================================================================-->
 
 
 
@@ -307,6 +228,85 @@
 <!--====================================================================
 			End Drugs
 	   =====================================================================-->
+
+<!--====================================================================
+			Start Articles
+	   =====================================================================-->
+
+
+
+<div class="articles">
+	<div class="container">
+		<div class="article-header text-center">
+			<h1>Articles</h1>
+		</div>
+	</div>
+</div>
+
+<div class="article-details">
+	<div class="container">
+		<div class="row">
+			@foreach ($articals1 as $item)
+			<div class="col-sm-6">
+				<div class="article-info">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="article-image">
+								<div class="article-photo">
+									<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="article-content">
+								<h1 class="article-h">
+									<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
+								</h1>
+								<i class="far fa-calendar-alt"></i> {{$item->date}}
+
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			@endforeach
+
+		</div>
+		<div class="row">
+			@foreach ($articals2 as $item)
+			<div class="col-sm-6">
+				<div class="article-info">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="article-image">
+								<div class="article-photo">
+									<img class="img-fluid" src="{{asset('uploads/articles/'.$item->image)}}">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="article-content">
+								<h1 class="article-h">
+									<a href="{{url('en/article/'.$item->id)}}">{{$item->en_title}}</a>
+								</h1>
+								<i class="far fa-calendar-alt"></i>{{$item->date}}
+
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			@endforeach
+
+		</div>
+
+	</div>
+</div>
+<!--====================================================================
+				End Articls
+		   =====================================================================-->
 
 
 <!--====================================================================

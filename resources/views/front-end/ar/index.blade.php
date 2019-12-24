@@ -114,7 +114,7 @@
 </div>
 
 
-<div class="operations section">
+{{-- <div class="operations section">
 	<div class="container">
 		<h1 class="text-center">العمليات</h1>
 		<hr class="first-line">
@@ -189,7 +189,7 @@
 
 	</div>
 </div>
-
+ --}}
 
 <!--====================================================================
 			End Drugs
