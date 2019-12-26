@@ -1,7 +1,7 @@
 @extends('front-end.en.layout.app')
 @section('content')
 <!--==================================================================== 
-			Start News
+			Start News asd
 	   =====================================================================-->
 
 <div class="news">
@@ -15,7 +15,7 @@
 </div>
 
 
-
+  
 
 	
 <div class="new-detail">
