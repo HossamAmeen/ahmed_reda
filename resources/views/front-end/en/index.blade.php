@@ -15,7 +15,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="header-content">
-					<h1>D Ahmed Reda</h1>
+					<h1>Dr Ahmed Reda</h1>
 					@if(isset($briefs->en_home_description))
 					<p>{{$briefs->en_home_description}}</p>
 
