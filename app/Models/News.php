@@ -13,8 +13,10 @@ class News extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function getSubDesnAttribute()
+    public function  getSubDesAttribute()
     {
-        return "test";
+      return  strip_tags(html_entity_decode($this->en_description));
+       
+       
     }
 }
