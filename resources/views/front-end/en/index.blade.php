@@ -113,7 +113,7 @@
 			End Drugs
 	   =====================================================================-->
 <div class="clincs section">
-	<img src="{{asset('web/ar/images/Group 245.png')}}" class="img-fluid">
+	<img src="{{asset('web/en/images/Group 245.png')}}" class="img-fluid">
 </div>
 
 
