@@ -169,9 +169,15 @@ class HomeController extends Controller
         
         $data = News::find($id);
         $datas = News::all()->sortByDesc("id")->where('id','!=',$id)->take(3);
+        if( strlen($data->title)> 50 )
         $pageTitle  = $data->title;
+        else
+        $pageTitle  = substr($data->title , 0 , 50 );
         if(  request()->segment(1) == "en" ){
+            if( strlen($data->en_title)> 50 )
             $pageTitle  = $data->en_title;
+            else
+            $pageTitle  = substr($data->en_title , 0 , 50 );
             $data = News::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
                      
@@ -181,7 +187,10 @@ class HomeController extends Controller
             return redirect()->route('home');
             // return view('front-end.'.$this->lang.'.news', compact('pageTitle' , 'news'));
           }
+          if( strlen($data->en_title)> 50 )
           $pageTitle  = $data->en_title;
+          else
+          $pageTitle  = substr($data->en_title , 0 , 50 );
         }
       
       
@@ -203,9 +212,17 @@ class HomeController extends Controller
         $data = Article::find($id);
         // return substr ( $data->description , 0 , 151 );
         $datas = Article::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
+        if( strlen($data->title)> 50 )
         $pageTitle  = $data->title;
+        else
+        $pageTitle  = substr($data->title , 0 , 50 );
         if(  request()->segment(1) == "en" ){
+            
+            if( strlen($data->en_title)> 50 )
             $pageTitle  = $data->en_title;
+            else
+            $pageTitle  = substr($data->en_title , 0 , 50 );
+
             $data = Article::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
                       
