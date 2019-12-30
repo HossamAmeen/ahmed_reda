@@ -1,4 +1,11 @@
 @extends('front-end.en.layout.app')
+@section('meta')	
+<meta property="og:url"                content="{{url('en/article/'.$data->id)}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{$data->en_title}}" />
+<meta property="og:description"        content="{{$data->en_sub_des}}" />
+<meta property="og:image"              content="{{asset('uploads/articles/'.$data->image)}}" />
+@endsection
 @section('content')	
 	<!--==================================================================== 
 			Start News

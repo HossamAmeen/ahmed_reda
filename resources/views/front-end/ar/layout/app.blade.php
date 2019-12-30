@@ -9,7 +9,8 @@
 	<meta name="description" content="{{$briefs->description}}">
 	<meta name="auther" content="Zedy Digital Agency">
     <meta name="keywords" content="دكتور رضا , امراض ذكورة , مسالك بولية , أسيوط , استشاري , حصوات , كلي , امراض">
-    <!-- Main Page Title -->
+	@yield('meta')
+	<!-- Main Page Title -->
     <title>{{ config('app.name' . $pageTitle , $pageTitle . ' - '.  $briefs->title ) }}</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">

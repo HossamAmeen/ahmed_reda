@@ -1,4 +1,12 @@
 @extends('front-end.ar.layout.app')
+@section('meta')	
+<meta property="og:url"                content="{{url('ar/news/'.$data->id)}}" />
+<meta property="og:type"               content="news" />
+<meta property="og:title"              content="{{$data->title}}" />
+<meta property="og:description"        content="{{$data->ar_sub_des}}" />
+<meta property="og:image"              content="{{asset('uploads/news/'.$data->image)}}" />
+@endsection
+@section('content')
 @section('content')
 	
 	<!--==================================================================== 

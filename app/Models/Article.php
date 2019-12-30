@@ -17,7 +17,12 @@ class Article extends Model
     }
     public function getEnSubDesAttribute()
     {
-        // return "test";
-        return  Str::limit($this->en_description , 150 , "");
+        return  substr(  strip_tags(html_entity_decode($this->en_description)) , 0 ,  150 );
+    }
+
+    public function getArSubDesAttribute()
+    {
+        // return substr(strip_tags($this->description), 0 ,  150 );
+        return  substr( strip_tags(html_entity_decode($this->description)  ),0 , 100 );
     }
 }

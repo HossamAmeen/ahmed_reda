@@ -9,7 +9,8 @@
     <meta name="description" content="{{$briefs->en_description}}">
 	<meta name="auther" content="Zedy Digital Agency">
     <meta name="keywords" content="Doctor Reda , Male diseases , Urologist , Assuit , Advisory , Gallstones , Kidney , Diseases  ">
-    <!-- Main Page Title -->
+	@yield('meta')
+	<!-- Main Page Title -->
     <title>{{ config('app.name' . $pageTitle , $pageTitle .' - '.  $briefs->en_title ) }}</title>
     <!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
@@ -32,6 +33,8 @@
     <!-- Main style css -->
     <link rel="stylesheet" href="{{asset('web/en/css/main.css')}}">
 	<link rel="shortcut icon" href="{{asset('web/en/images/icon.png')}}" />
+	
+	
 </head>
 <body>
 

@@ -201,6 +201,7 @@ class HomeController extends Controller
     public function show_artical($id){
         
         $data = Article::find($id);
+        // return substr ( $data->description , 0 , 151 );
         $datas = Article::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
         $pageTitle  = "المقال";
         if(  request()->segment(1) == "en" ){

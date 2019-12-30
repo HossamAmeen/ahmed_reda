@@ -35,7 +35,7 @@
 													</h1>
 													<i class="far fa-calendar-alt"></i> <span> {{$artical->date}} </span>
 													<p class="n-paragraph">
-														{!! \Illuminate\Support\Str::limit($artical->en_description, 150 ) !!}
+														{{ $artical->en_sub_des}}
 										</p>
 										<hr>
 										</div>
