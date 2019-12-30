@@ -171,7 +171,7 @@ class HomeController extends Controller
         $datas = News::all()->sortByDesc("id")->where('id','!=',$id)->take(3);
         $pageTitle  = $data->title;
         if(  request()->segment(1) == "en" ){
-            $pageTitle  = "news";
+            $pageTitle  = $data->en_title;
             $data = News::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
                      
@@ -203,9 +203,9 @@ class HomeController extends Controller
         $data = Article::find($id);
         // return substr ( $data->description , 0 , 151 );
         $datas = Article::all()->sortByDesc("id")->where('en_title','!=',null)->where('id','!=',$id)->take(3);
-        $pageTitle  = "المقال";
+        $pageTitle  = $data->title;
         if(  request()->segment(1) == "en" ){
-            $pageTitle  = "article";
+            $pageTitle  = $data->en_title;
             $data = Article::where( 'id', $id )
                         ->where('en_title','!=',null )->first();
                       
