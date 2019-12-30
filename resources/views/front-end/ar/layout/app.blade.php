@@ -189,7 +189,7 @@
 	   =====================================================================-->
 	<div class="copy">
 		<div class="container">
-				<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/"  target="_blank">zedy</a>2019</h4>
+				<h4 class="text-center">CopyRight @ <a href="http://www.z-edy.com/"  target="_blank">ZEDY</a>2019</h4>
 		</div>
 	</div>
 
