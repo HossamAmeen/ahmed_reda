@@ -3,7 +3,7 @@
 @section('meta')	
 <meta property="og:url"                content="{{url('ar/article/'.$data->id)}}" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="{{$data->title}}" />
+<meta property="og:title"              content=" دكتور احمد رضا يكتب  {{$data->title}} | الموقع الرسمي للدكتور أحمد رضا" />
 <meta property="og:description"        content="{{$data->ar_sub_des}}" />
 <meta property="og:image"              content="{{asset('uploads/articles/'.$data->image)}}" />
 @endsection
