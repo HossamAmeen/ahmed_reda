@@ -8,7 +8,7 @@
 <div class="news">
 	<div class="container">
 		<div class="page-header text-center">
-			<h1>اخبار العيادة</h1>
+			<h1>أخبار العيادة</h1>
 			
 		</div>
 

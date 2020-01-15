@@ -160,7 +160,7 @@
 							<li><a href="{{url('ar/services')}}">الخدمات</a></li>
 						</ul>
 						<ul class="list-unstyled">
-							<li><a href="{{url('ar/questions')}}">اسئلة شائعة</a></li>
+							<li><a href="{{url('ar/questions')}}">أسئلة شائعة</a></li>
 							<li><a href="{{url('ar/booking')}}">احجز</a></li>
 							@if(isset($briefs->facebook))
 							<li><a href="{{$briefs->facebook}}"  target="_blank">فيس بوك</a></li>

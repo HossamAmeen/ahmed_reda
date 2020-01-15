@@ -8,7 +8,7 @@ class News extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'title' , 'description', 'en_title' , 'en_description', 'image' , "user_id"
+        'title' , 'description', 'en_title' , 'en_description', 'image' ,"date", "user_id"
     ];
     public function user(){
         return $this->belongsTo(User::class);
