@@ -43,8 +43,8 @@
 										
 									</ul>
 									<p class="n-paragraph">
-									
-										{!! \Illuminate\Support\Str::limit($new->description, 150 ) !!}
+										{{$new->ar_sub_des}}
+										{{-- {!! \Illuminate\Support\Str::limit($new->description, 150 ) !!} --}}
 									</p>
 									<hr>
 									{{-- <div class="views">

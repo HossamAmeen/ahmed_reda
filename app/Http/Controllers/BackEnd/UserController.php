@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Requests\BackEnd\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Image;
@@ -30,8 +31,33 @@ class UserController extends BackEndController
         session()->flash('action', 'تم الاضافه بنجاح');
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
-
+    public function edit($id)
+    {
+      if( Auth::user()->role == 1)
+      
+      {
+        $row = $this->model->FindOrFail($id);
+        $moduleName = $this->getModelName();
+        $pageTitle = "Edit " . $moduleName;
+        $pageDes = "Here you can edit " .$moduleName;
+        $folderName = $this->getClassNameFromModel();
+        $routeName = $folderName;
+        $append = $this->append();
+        // return $row; 
+        return view('back-end.' . $folderName . '.edit', compact(
+            'row',
+            'pageTitle',
+            'moduleName',
+            'pageDes',
+            'folderName',
+            'routeName'
+        ))->with($append);
+      }
+       
+    }
     public function update($id , UserRequest $request){
+
+        return Auth::user()->id;
           $requestArray = $request->all();
         if($request->hasFile('image'))
         {

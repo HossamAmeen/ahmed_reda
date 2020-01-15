@@ -21,6 +21,6 @@ class News extends Model
     public function getArSubDesAttribute()
     {
         // return substr(strip_tags($this->description), 0 ,  120 );
-        return  substr( strip_tags(html_entity_decode($this->description)  ) , 0 ,  10 );
+        return  substr( strip_tags(html_entity_decode($this->description)  ) , 0 ,  150 );
     }
 }
