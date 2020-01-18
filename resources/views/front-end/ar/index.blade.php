@@ -239,7 +239,7 @@
 <div class="drugs section">
 	<div class="container">
 		<div class="drugs-content">
-			<h1>علاج امراض الذكورة</h1>
+			<h1>علاج أمراض الذكورة</h1>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="row">

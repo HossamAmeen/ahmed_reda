@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{$briefs->description}}">
 	<meta name="auther" content="Zedy Digital Agency">
-    <meta name="keywords" content="دكتور رضا , امراض ذكورة , مسالك بولية , أسيوط , استشاري , حصوات , كلي , امراض">
+    <meta name="keywords" content="دكتور رضا , امراض ذكورة , مسالك بولية , أسيوط , استشاري , حصوات , كلي , أمراض">
 	@yield('meta')
 	<!-- Main Page Title -->
     <title>{{ config('app.name' . $pageTitle , $pageTitle . ' - '.  $briefs->title ) }}</title>
@@ -65,13 +65,13 @@
 					<a class="nav-link" href="{{url('ar/services')}}">خدمات العيادة</a>
 				  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="{{url('ar/news')}}">الاخبار</a>
+					<a class="nav-link" href="{{url('ar/news')}}">الأخبار</a>
 				  </li>
 				  <li class="nav-item">
 						<a class="nav-link" href="{{url('ar/articles')}}">المقالات</a>
 					  </li>
 					<li class="nav-item">
-					<a class="nav-link" href="{{url('ar/questions')}}">اسئلة شائعة 	</a>
+					<a class="nav-link" href="{{url('ar/questions')}}">الأسئلة الشائعة</a>
 				  </li>
 					<li class="nav-item">
 					<a class="nav-link" href="{{url('ar/booking')}}">احجز</a>
@@ -197,7 +197,15 @@
 			End Copy
 	   =====================================================================-->
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156345475-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-156345475-1');
+</script>
 
 
 

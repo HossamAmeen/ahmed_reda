@@ -899,6 +899,10 @@ color:#000;
     border-radius: 5px
 	
 }
+
+.article-pagination .pagina .pagination .page-item .page-link{
+	color:#e0393b;
+}
 /*-----------------End Articles---------------*/
 
 

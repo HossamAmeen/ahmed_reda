@@ -51,8 +51,27 @@
 					
 					
 				</div>
-
-				<div class="text-center">{{ $articals->links() }} </div>
+				<div class="article-pagination">
+					<div class="pagina">
+						<nav aria-label="...">
+							<ul class="pagination">
+								{{-- <li class="page-item active" aria-current="page">
+									<a class="page-link" href="#">1</a>
+									<span class="sr-only">(current)</span>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">2</a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#">التالي <i class="fas fa-arrow-left"></i></a>
+								</li> --}}
+								{{ $articals->links() }} 
+							</ul>
+						</nav>
+					</div>
+				</div>
+				{{-- <div class="text-center">{{ $articals->links() }} </div> --}}
 			
 	</div>
 	<!--==================================================================== 
