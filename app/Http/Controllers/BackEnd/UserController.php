@@ -13,6 +13,8 @@ class UserController extends BackEndController
     public function __construct(User $model)
     {
         parent::__construct($model);
+
+      
     }
 
     public function store(UserRequest $request){

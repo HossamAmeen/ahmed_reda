@@ -28,22 +28,25 @@
     <!--Left navigation start-->
    <!--Left navigation start-->
    <ul class="mainNav">
+       @if( Auth::user()->role == 1 )
     <li >
         <a href="{{route('prefs')}}" class="{{is_active('prefs')}}">
                 <i class="fas fa-edit"></i><span>تعديل بيانات الموقع</span>
         </a>
     </li>
-    
+    @endif
     <li class="{{is_active('users')}}">
             <a href="#"  class="{{is_active('users')}}">
                     <i class="fa fa-group"></i><span>المستخدمين</span>
             </a>  
-        <ul>
+        <ul> 
+            @if( Auth::user()->role == 1 )
                 <li>
                         <a href="{{route('users.index')}}"  >
                                 <i class="fa fa-group"></i><span>المستخدمين</span>
                         </a>  
                 </li>
+            @endif
                 <li>
                         <a href="{{route('users.edit' , ['id' => Auth::user()->id])}}" class="{{is_active('brefs')}}">
                                 <i class="fas fa-edit"></i><span>تعديل بيانات الحساب</span>
