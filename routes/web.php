@@ -10,10 +10,11 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             // Route::get('/', 'BriefController@index');
             // Route::resource('briefs', 'BriefController');briefs.update
             Route::get('/', 'BriefController@editPrefs');
-            Route::get('/prefs', 'BriefController@editPrefs')->name('prefs');
+            Route::get('/prefs', 'BriefController@editPrefs')->middleware('checkAdmin');
             Route::put('/prefs', 'BriefController@update')->name('briefs.update');
-            Route::resource('users', 'UserController')->middleware('checkAdmin');
-            
+            Route::get('users/{id}/edit', 'UserController@edit');
+            Route::resource('users', 'UserController');
+          
             // Route::resource('users', 'UserController');
             Route::resource('services', 'ServiceController');
             Route::resource('news', 'NewsController');
