@@ -104,6 +104,7 @@ class UserController extends BackEndController
     {
       
         $row = $this->model->FindOrFail($id);
+       
         if( Auth::user()->role >= $row->role)
       
       {
@@ -126,9 +127,10 @@ class UserController extends BackEndController
        
     }
     public function update($id , UserRequest $request){
-      if( Auth::user()->role == 1 )
-      {
-        
+      $row = $this->model->FindOrFail($id);
+      if( Auth::user()->role >= $row->role)
+    
+    {
           $requestArray = $request->all();
         if($request->hasFile('image'))
         {

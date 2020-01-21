@@ -64,6 +64,7 @@
            @enderror
      </div>
  </div>    
+ @if(Auth::user()->role == 1 )
 @php $input = "role"; @endphp  
 <div class="form-group">
         <label class="col-md-2 col-sm-2 col-xs-12 control-label">الصلاحيه</label>
@@ -96,7 +97,8 @@
                  <strong>{{ $message }}</strong>
         </span>
         @enderror
-</div>                      
+</div>  
+@endif                    
 @php $input = "image"; @endphp          
 <div class="form-group">
         <label class="col-md-2 control-label">الصورة</label>

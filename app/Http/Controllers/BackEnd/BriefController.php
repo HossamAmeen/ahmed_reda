@@ -79,6 +79,7 @@ class BriefController extends BackEndController
 
     public function editPrefs()
     {
+        if( Auth::user()->role == 1 ){
         $row = $this->model->FindOrFail(1);
         $folderName = $this->getClassNameFromModel();
         $routeName = $folderName;
@@ -90,11 +91,12 @@ class BriefController extends BackEndController
         
   
     }
+}
 
     
     public function update(Request $request)
     {
-     
+        if( Auth::user()->role == 1 ){
        $pref = Brief::find(1);
        if(!empty($pref)){
            $pref->fill($request->all());
@@ -103,7 +105,7 @@ class BriefController extends BackEndController
 
        $request->session()->flash('status', 'updated successfully');
        return back()->withInput();
-    }
+    }}
   
 
 }
