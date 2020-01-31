@@ -35,25 +35,27 @@
         </a>
     </li>
     @endif
-    <li class="{{is_active('users')}}">
-            <a href="#"  class="{{is_active('users')}}">
-                    <i class="fa fa-group"></i><span>المستخدمين</span>
-            </a>  
-        <ul> 
-            @if( Auth::user()->role == 1 )
+    @if( Auth::user()->role == 1 )
                 <li>
-                        <a href="{{route('users.index')}}"  >
+                        <a href="{{route('users.index')}}"  class="{{is_active('users')}}">
                                 <i class="fa fa-group"></i><span>المستخدمين</span>
                         </a>  
                 </li>
             @endif
-                <li>
-                        <a href="{{route('users.edit' , ['id' => Auth::user()->id])}}" class="{{is_active('brefs')}}">
-                                <i class="fas fa-edit"></i><span>تعديل بيانات الحساب</span>
-                        </a>
-                </li>
+            <li>
+                <a href="{{route('users.edit' , ['id' => Auth::user()->id])}}" class="{{edit_profle_is_active('users')}}">
+                        <i class="fas fa-edit"></i><span>تعديل بيانات الحساب</span>
+                </a>
+        </li>
+    {{-- <li class="{{is_active('users')}}">
+            <a href="#"  class="{{is_active('users')}}">
+                    <i class="fa fa-group"></i><span>المستخدمين</span>
+            </a>  
+        <ul> 
+            
+               
         </ul>
-    </li>
+    </li> --}}
      <li class="{{is_active('articles')}}">
         <a href="{{route('articles.index')}}"  class="{{is_active('articles')}}">
                 <i class="fa fa-image"></i><span>المقالات</span>

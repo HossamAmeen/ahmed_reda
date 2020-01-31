@@ -30,9 +30,9 @@
       <label class="col-lg-2 control-label">الاسم بالكامل</label>
       <div class="col-lg-10">
           <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
-            class="form-control">
+            class="form-control" required>
             @error($input)
-            <span class="invalid-feedback" role="alert" required>
+            <span class="invalid-feedback" role="alert" >
                      <strong>{{ $message }}</strong>
             </span>
             @enderror
@@ -43,7 +43,7 @@
       <label class="col-lg-2 control-label">كلمة السر</label>
        <div class="col-lg-10">
          <input type="password" name="{{ $input }}"
-            class="form-control" >
+            class="form-control" required>
             @error($input)
             <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
      <label class="col-lg-2 control-label"> تاكيد كلمة السر</label>
     <div class="col-lg-10">
          <input type="password" name="{{ $input }}" 
-           class="form-control" >
+           class="form-control" required>
            @error($input)
            <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

@@ -91,6 +91,8 @@ class BriefController extends BackEndController
         
   
     }
+    else
+    return   redirect()->route('news.index');
 }
 
     

@@ -12,7 +12,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function(){
             Route::get('/', 'BriefController@editPrefs');
             Route::get('/prefs', 'BriefController@editPrefs')->name('prefs')->middleware('checkAdmin');
             Route::put('/prefs', 'BriefController@update')->name('briefs.update');
-            Route::get('users/{id}/edit', 'UserController@edit');
+            // Route::get('users/{id}/edit', 'UserController@edit');
             Route::resource('users', 'UserController');
           
             // Route::resource('users', 'UserController');
