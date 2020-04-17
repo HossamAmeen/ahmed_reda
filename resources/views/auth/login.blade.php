@@ -92,16 +92,16 @@
                     <div class="login-form">
                         <form id="form-login" action="{{ route('login') }}" class="form-horizontal ls_form" method="POST">
                                         @csrf
-                              
-                            @error('login')
+                            
+                            @error('user_name')
                             <div class="alert alert-danger">
                                 <button type="button" class="close" data-dismiss="alert"
                                                 aria-hidden="true">&times;</button>
-                                 <strong>sorry</strong> {{ $message }}
+                                 {{ $message }}
                             </div>
                             @enderror
                             <div class="input-group ls-group-input">
-                                <input id="email" type="text" class="form-control @error('login') is-invalid @enderror"
+                                <input id="email" type="text" class="form-control @error('user_name') is-invalid @enderror"
                                  name="login" value="{{ old('login') }}" required autocomplete="login" autofocus>
 
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -112,7 +112,7 @@
                             <div class="alert alert-danger">
                                 <button type="button" class="close" data-dismiss="alert"
                                                 aria-hidden="true">&times;</button>
-                                 <strong>sorry</strong> {{ $message }}
+                                 {{ $message }}
                             </div>
                             @enderror
                             <div class="input-group ls-group-input">
@@ -136,26 +136,28 @@
                                 </button>
                                
 
-                                <a class="forgot-password" href="javascript:void(0)">Forgot password</a>
+                                {{-- <a class="forgot-password" href="javascript:void(0)">Forgot password</a> --}}
                             </div>
                         </form>
                     </div>
-                    <div class="forgot-pass-box">
-                        <form action="#" class="form-horizontal ls_form">
+                    {{-- <div class="forgot-pass-box">
+                    <form action="{{Route('forget.password')}}" class="form-horizontal ls_form" method="POST">
+                            @csrf
                             <div class="input-group ls-group-input">
                                 <input class="form-control" type="text" placeholder="someone@mail.com">
                                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                             </div>
-                            <div class="input-group ls-group-input login-btn-box">
-                                <button class="btn ls-dark-btn col-md-12 col-sm-12 col-xs-12">
+                             <button>
                                     <i class="fa fa-rocket"></i> Send
                                 </button>
+                            <div class="input-group ls-group-input login-btn-box">
+                                <button class="btn ls-dark-btn col-md-12 col-sm-12 col-xs-12">
+                                </button>
+                               
 
-                                <a class="login-view" href="javascript:void(0)">Login</a> & <a class="" href="registration.html">Registration</a>
-
-                            </div>
+                                </div>
                         </form>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

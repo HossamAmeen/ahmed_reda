@@ -22,6 +22,6 @@ class CheckAdmin
         //  else
         return   redirect()->route('news.index');
         return back()->withInput();
-         
+
     }
 }

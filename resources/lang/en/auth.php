@@ -13,6 +13,10 @@ return [
     |
     */
 
+    'user_name' => "اسم المتسخدم خطأ" ,
+
+    'email' => 'البريد الاكلتروني خطأ',
+    'password' => 'كلمة المرور خطأ',
     'failed' => 'اسم المستخدم هذا خطأ او غير مسجل',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
