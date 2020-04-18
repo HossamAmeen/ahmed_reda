@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/test', function () {
-    return "test";
-});
-
 Auth::routes();
 Route::namespace('BackEnd')->prefix('admin')->group(function(){
     Route::middleware('auth')->group(function () {

@@ -21,7 +21,8 @@ class RedirectIfAuthenticated
         //     return redirect('login');
         // }
             if(Auth::check()){
-                return back();
+                // return back();
+                return redirect('admin/news');
             }
         return $next($request);
     }
